@@ -1,0 +1,19 @@
+alias l="exa -lah"
+alias rm="trash"
+alias zshconfig="code ~/.zshrc"
+alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup; brew doctor;  omz update; updateOS;"
+alias ccc="rm -rf ~/Library/Caches/*; trash -e -y"
+alias c="clear"
+alias s="exec zsh"
+alias npmG="npm list -g --depth=0"
+alias python="python3"
+alias updateOS="softwareupdate -i -a --no-scan --agree-to-license"
+
+alias d=docker
+alias dc=docker-compose
+
+alias ll='ls -alF'
+alias ls="exa --icons -F -H --group-directories-first --git -1"
+
+alias cat='bat --color=always'
+alias grep='grep --color=auto'
