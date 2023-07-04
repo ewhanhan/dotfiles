@@ -6,6 +6,7 @@ alias ccc="rm -rf ~/Library/Caches/*; trash -e -y"
 alias c="clear"
 alias s="exec zsh"
 alias npmG="npm list -g --depth=0"
+alias npmU="ncu -g | grep -oE 'npm -g.*' | xargs -I {} sh -c "{}""
 alias python="python3"
 alias updateOS="softwareupdate -i -a --no-scan --agree-to-license"
 
