@@ -23,6 +23,7 @@
     "FIG_NEW_SESSION": "1"
   },
 
+  //! debug
   "debug.console.fontFamily": "'JetBrainsMono Nerd Font'",
   "debug.console.fontSize": 13,
   "debug.terminal.clearBeforeReusing": true,
@@ -159,7 +160,7 @@
   "diffEditor.renderSideBySide": false,
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.codeLens": false,
-
+  "diffEditor.maxFileSize": 100,
   //! zen
   "zenMode.fullScreen": false,
   "zenMode.centerLayout": false,
@@ -182,8 +183,14 @@
   "git.inputValidationLength": 100,
   "git.inputValidationSubjectLength": 100,
 
+  //! scm
   "scm.defaultViewMode": "tree",
   // "task.quickOpen.history": 5,
+
+  //! npm
+  "npm.enableRunFromFolder": true,
+  "npm.runSilent": true,
+  "npm.fetchOnlinePackageInfo": true,
 
   //! notifications
   "window.dialogStyle": "custom",
@@ -272,7 +279,7 @@
   "eslint.ignoreUntitled": true,
   "eslint.lintTask.enable": true,
 
-  //! format
+  //! language specific
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -333,6 +340,10 @@
 
   "template-string-converter.autoRemoveTemplateString": true,
   "template-string-converter.convertOutermostQuotes": true,
+
+  //! extensions
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "extensions.closeExtensionDetailsOnViewChange": true,
   //! telemetry
   "telemetry.telemetryLevel": "off",
   "extensions.ignoreRecommendations": false,
@@ -353,6 +364,7 @@
     "exif",
     "formik",
     "Formik",
+    "gatsby",
     "linkcheckin",
     "notistack",
     "nums",
@@ -449,6 +461,7 @@
   "gitlens.views.commits.showBranchComparison": false,
   "gitlens.views.searchAndCompare.avatars": false,
 
+  //! npm intellisense
   "npm-intellisense.importES6": true,
   "npm-intellisense.importQuotes": "'",
   "npm-intellisense.importLinebreak": ";\r\n",
@@ -459,33 +472,31 @@
 
   "security.workspace.trust.untrustedFiles": "open",
 
+  //! wakatime
   "wakatime.apiKey": "waka_439a1691-65f8-4fdc-92a7-160a95a14691",
+  //! prettier
   "prettier.singleQuote": true,
-
+  //! error lens
   "errorLens.gutterIconsEnabled": true,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
   "errorLens.delay": 500,
 
+  //! copilot
   "github.copilot.enable": {
     "*": true,
     "yaml": false,
     "plaintext": false,
     "markdown": true
   },
-
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-  "extensions.closeExtensionDetailsOnViewChange": true,
-
-  "projectManager.sortList": "Path",
-  "npm.enableRunFromFolder": true,
-
   "chat.experimental.quickQuestion.enable": true,
   "chat.editor.fontFamily": "'JetBrainsMono Nerd Font'",
+  //! project manager
+  "projectManager.sortList": "Path",
 
+  //! random
   "abracadabra.changeSignature.showInQuickFix": false,
-
   "vsicons.dontShowNewVersionMessage": true,
-
   "liveshare.accessibility.accessibilityFeaturesEnabled": "off",
-  "javascriptBooster.logLevel": "verbose"
+  "javascriptBooster.logLevel": "verbose",
+  "githubRepositories.indexing.cacheSizeLimit": 500
 }
