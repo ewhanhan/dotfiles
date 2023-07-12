@@ -24,6 +24,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.94117647409439087
   },
+  "Use Custom Window Title" : true,
   "Right Option Key Sends" : 0,
   "Show Status Bar" : false,
   "Character Encoding" : 4,
@@ -68,14 +69,14 @@
             "iTermStatusBarSpringComponentSizeMultipleKey" : 1,
             "base: priority" : 5,
             "iTermStatusBarSpringComponentSpringConstantKey" : 0.01,
+            "base: compression resistance" : 1,
             "shared text color" : {
               "Red Component" : 0.90000000000000002,
               "Color Space" : "sRGB",
               "Blue Component" : 0.63,
               "Alpha Component" : 1,
               "Green Component" : 0.63
-            },
-            "base: compression resistance" : 1
+            }
           },
           "layout advanced configuration dictionary value" : {
             "remove empty components" : false,
@@ -156,6 +157,7 @@
         "configuration" : {
           "knobs" : {
             "base: priority" : 5,
+            "base: compression resistance" : 1,
             "shared text color" : {
               "Red Component" : 0.90000000000000002,
               "Color Space" : "sRGB",
@@ -163,7 +165,6 @@
               "Alpha Component" : 1,
               "Green Component" : 0.63
             },
-            "base: compression resistance" : 1,
             "format" : "M\/dd h:mm"
           },
           "layout advanced configuration dictionary value" : {
@@ -195,13 +196,6 @@
   "BM Growl" : true,
   "AWDS Window Directory" : "",
   "Icon" : 1,
-  "Link Color" : {
-    "Red Component" : 0.29264676570892334,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.85775750875473022,
-    "Alpha Component" : 1,
-    "Green Component" : 0.66938728094100952
-  },
   "Ansi 3 Color" : {
     "Red Component" : 0.95294123888015747,
     "Color Space" : "sRGB",
@@ -209,8 +203,15 @@
     "Alpha Component" : 1,
     "Green Component" : 0.97647064924240112
   },
-  "Shortcut" : "",
   "Use Non-ASCII Font" : false,
+  "Shortcut" : "",
+  "Link Color" : {
+    "Red Component" : 0.29264676570892334,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.85775750875473022,
+    "Alpha Component" : 1,
+    "Green Component" : 0.66938728094100952
+  },
   "Background Image Location" : "",
   "Bold Color" : {
     "Red Component" : 0.97102361917495728,
@@ -220,10 +221,12 @@
     "Green Component" : 0.97102349996566772
   },
   "Use Cursor Guide" : false,
+  "Custom Window Title" : "\\(currentTab.currentSession.path)",
   "Unlimited Scrollback" : true,
+  "Allow Title Setting" : false,
   "Custom Command" : "No",
   "AWDS Tab Option" : "No",
-  "Title Components" : 2,
+  "Title Components" : 4,
   "Keyboard Map" : {
     "0x33-0x200000-0x0" : {
       "Text" : "3",
