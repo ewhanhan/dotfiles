@@ -94,7 +94,7 @@
           "treat_as_built_in_keyboard": false
         },
         {
-          "disable_built_in_keyboard_if_exists": false,
+          "disable_built_in_keyboard_if_exists": true,
           "fn_function_keys": [],
           "identifiers": {
             "is_keyboard": true,
@@ -102,13 +102,13 @@
             "product_id": 19767,
             "vendor_id": 35176
           },
-          "ignore": true,
+          "ignore": false,
           "manipulate_caps_lock_led": true,
           "simple_modifications": [],
           "treat_as_built_in_keyboard": false
         },
         {
-          "disable_built_in_keyboard_if_exists": false,
+          "disable_built_in_keyboard_if_exists": true,
           "fn_function_keys": [],
           "identifiers": {
             "is_keyboard": true,
@@ -146,28 +146,7 @@
           },
           "ignore": false,
           "manipulate_caps_lock_led": true,
-          "simple_modifications": [
-            {
-              "from": {
-                "key_code": "right_control"
-              },
-              "to": [
-                {
-                  "apple_vendor_top_case_key_code": "keyboard_fn"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "right_option"
-              },
-              "to": [
-                {
-                  "apple_vendor_top_case_key_code": "keyboard_fn"
-                }
-              ]
-            }
-          ],
+          "simple_modifications": [],
           "treat_as_built_in_keyboard": false
         }
       ],
