@@ -1,8 +1,18 @@
 {
+  //! font
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+  "editor.fontFamily": "SFMono-Regular, FiraCode-Retina, 'JetBrainsMono Nerd Font'",
+  "debug.console.fontFamily": "'JetBrainsMono Nerd Font'",
+  "editor.lineHeight": 17,
+  "editor.fontLigatures": true,
+
+  //! font size
+  "terminal.integrated.fontSize": 14,
+  "debug.console.fontSize": 14,
+  "editor.fontSize": 14,
+
   //! terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
-  "terminal.integrated.fontSize": 13,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.persistentSessionReviveProcess": "never",
@@ -15,7 +25,7 @@
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.lineHeight": 0.5,
   "workbench.colorCustomizations": {
-    "terminal.background": "#282a35",
+    // "terminal.background": "#282a35",
     "terminal.foreground": "#ffffff"
   },
   "terminal.external.osxExec": "iTerm.app",
@@ -24,13 +34,13 @@
   },
 
   //! debug
-  "debug.console.fontFamily": "'JetBrainsMono Nerd Font'",
-  "debug.console.fontSize": 13,
   "debug.terminal.clearBeforeReusing": true,
   "debug.onTaskErrors": "debugAnyway",
 
   //! search
-  "search.quickOpen.history.filterSortOrder": "recency",
+  "search.seedWithNearestWord": true,
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
   "search.quickOpen.includeSymbols": true,
   "search.quickOpen.includeHistory": false,
   "search.exclude": {
@@ -54,10 +64,11 @@
   },
 
   //! workbench
+  "workbench.sideBar.location": "right",
   "workbench.editor.enablePreview": false,
   "workbench.editor.tabSizing": "fit",
   "workbench.editor.preferHistoryBasedLanguageDetection": true,
-  "workbench.colorTheme": "One Dark Pro Mix",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
   "workbench.productIconTheme": "macos-modern",
   "workbench.iconTheme": "vscode-icons",
   "workbench.commandPalette.experimental.useSemanticSimilarity": true,
@@ -102,10 +113,7 @@
   //! look and feel
   "editor.tabSize": 2,
   "editor.rulers": [80],
-  "editor.fontSize": 13,
-  "editor.lineHeight": 17,
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+
   "editor.find.addExtraSpaceOnTop": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "wordWrapColumn", // default is off
@@ -134,7 +142,6 @@
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.scrollBeyondLastLine": false,
   "editor.stickyScroll.enabled": true,
-
   //! JSX
   "editor.bracketPairColorization.enabled": true,
   "editor.autoClosingBrackets": "beforeWhitespace",
@@ -156,8 +163,9 @@
   "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font'",
 
   //! diff
-  "diffEditor.diffAlgorithm": "legacy",
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.experimental.useVersion2": true,
+  "diffEditor.diffAlgorithm": "advanced",
+  "mergeEditor.diffAlgorithm": "advanced",
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.codeLens": false,
   "diffEditor.maxFileSize": 100,
@@ -261,8 +269,6 @@
   "typescript.experimental.aiQuickFix": true,
   "typescript.preferGoToSourceDefinition": true,
   "typescript.suggest.completeFunctionCalls": true,
-
-  // !eslint
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
@@ -361,6 +367,8 @@
     "describedby",
     "Elems",
     "Emiter",
+    "Ewhan",
+    "EWHAN",
     "exif",
     "formik",
     "Formik",
@@ -371,6 +379,7 @@
     "oidc",
     "Pokedex",
     "raam",
+    "roboto",
     "setuser",
     "SIGNUP",
     "Spoonacular",
@@ -456,7 +465,7 @@
   "gitlens.views.commits.files.compact": false,
   "gitlens.views.commits.files.layout": "list",
   "gitlens.views.branches.branches.layout": "list",
-  "gitlens.graph.layout": "panel",
+  "gitlens.graph.layout": "editor",
   "gitlens.graph.minimap.enabled": false,
   "gitlens.views.commits.showBranchComparison": false,
   "gitlens.views.searchAndCompare.avatars": false,
@@ -474,12 +483,9 @@
 
   //! wakatime
   "wakatime.apiKey": "waka_439a1691-65f8-4fdc-92a7-160a95a14691",
-  //! prettier
-  "prettier.singleQuote": true,
   //! error lens
   "errorLens.gutterIconsEnabled": true,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
-  "errorLens.delay": 500,
 
   //! copilot
   "github.copilot.enable": {
@@ -498,5 +504,8 @@
   "vsicons.dontShowNewVersionMessage": true,
   "liveshare.accessibility.accessibilityFeaturesEnabled": "off",
   "javascriptBooster.logLevel": "verbose",
-  "githubRepositories.indexing.cacheSizeLimit": 500
+  "githubRepositories.indexing.cacheSizeLimit": 500,
+  "editor.foldingImportsByDefault": true,
+  "errorLens.scrollbarHackEnabled": true,
+  "workbench.statusBar.visible": false
 }
