@@ -64,6 +64,7 @@
   },
 
   //! workbench
+  "workbench.statusBar.visible": false,
   "workbench.sideBar.location": "right",
   "workbench.editor.enablePreview": false,
   "workbench.editor.tabSizing": "fit",
@@ -136,9 +137,9 @@
   //! scroll
   "editor.overviewRulerBorder": false,
   "workbench.editor.showIcons": true,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.verticalScrollbarSize": 14,
   "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.scrollBeyondLastLine": false,
   "editor.stickyScroll.enabled": true,
@@ -507,5 +508,8 @@
   "githubRepositories.indexing.cacheSizeLimit": 500,
   "editor.foldingImportsByDefault": true,
   "errorLens.scrollbarHackEnabled": true,
-  "workbench.statusBar.visible": false
+  "vscode-pets.petSize": "small",
+  "vscode-pets.petColor": "white",
+  "vscode-pets.petType": "dog",
+  "diffEditor.renderSideBySide": false
 }
