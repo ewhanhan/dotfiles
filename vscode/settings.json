@@ -1,7 +1,7 @@
 {
   //! font
   "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
-  "editor.fontFamily": "SFMono-Regular, FiraCode-Retina, 'JetBrainsMono Nerd Font'",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', SFMono-Regular, FiraCode-Retina",
   "debug.console.fontFamily": "'JetBrainsMono Nerd Font'",
   "editor.lineHeight": 17,
   "editor.fontLigatures": true,
@@ -64,15 +64,13 @@
   },
 
   //! workbench
-  "workbench.statusBar.visible": false,
-  "workbench.sideBar.location": "right",
+  "workbench.activityBar.visible": true,
   "workbench.editor.enablePreview": false,
   "workbench.editor.tabSizing": "fit",
   "workbench.editor.preferHistoryBasedLanguageDetection": true,
   "workbench.colorTheme": "Gruvbox Dark Medium",
   "workbench.productIconTheme": "macos-modern",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.commandPalette.experimental.useSemanticSimilarity": true,
   "workbench.layoutControl.enabled": false,
 
   "workbench.commandPalette.experimental.suggestCommands": true,
@@ -114,6 +112,7 @@
   //! look and feel
   "editor.tabSize": 2,
   "editor.rulers": [80],
+  "editor.fontWeight": "normal",
 
   "editor.find.addExtraSpaceOnTop": false,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -164,12 +163,13 @@
   "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font'",
 
   //! diff
-  "diffEditor.experimental.useVersion2": true,
   "diffEditor.diffAlgorithm": "advanced",
   "mergeEditor.diffAlgorithm": "advanced",
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.codeLens": false,
   "diffEditor.maxFileSize": 100,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.experimental.showMoves": true,
   //! zen
   "zenMode.fullScreen": false,
   "zenMode.centerLayout": false,
@@ -244,7 +244,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": false,
+  "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.preferences.jsxAttributeCompletionStyle": "none",
   "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
@@ -347,9 +347,6 @@
 
   "template-string-converter.autoRemoveTemplateString": true,
   "template-string-converter.convertOutermostQuotes": true,
-
-  //! extensions
-  "extensions.autoUpdate": "onlyEnabledExtensions",
   "extensions.closeExtensionDetailsOnViewChange": true,
   //! telemetry
   "telemetry.telemetryLevel": "off",
@@ -374,6 +371,7 @@
     "formik",
     "Formik",
     "gatsby",
+    "konst",
     "linkcheckin",
     "notistack",
     "nums",
@@ -446,30 +444,31 @@
       "stash": true
     }
   },
-  "gitlens.views.stashes.files.layout": "tree",
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.hovers.enabled": false,
-  "gitlens.views.contributors.avatars": false,
   "gitlens.views.worktrees.avatars": false,
   "gitlens.views.tags.avatars": false,
-  "gitlens.views.remotes.avatars": false,
-  "gitlens.views.remotes.files.compact": false,
+  "gitlens.views.stashes.files.layout": "tree",
+  "gitlens.views.searchAndCompare.avatars": false,
   "gitlens.views.remotes.files.layout": "tree",
-  "gitlens.views.branches.avatars": false,
-  "gitlens.views.branches.files.compact": false,
-  "gitlens.views.branches.files.layout": "tree",
+  "gitlens.views.remotes.files.compact": false,
+  "gitlens.views.remotes.avatars": false,
+  "gitlens.views.contributors.avatars": false,
+  "gitlens.views.commits.showBranchComparison": false,
+  "gitlens.views.commits.pullRequests.showForBranches": false,
+  "gitlens.views.commits.pullRequests.enabled": false,
+  "gitlens.views.commits.files.layout": "list",
+  "gitlens.views.commits.files.compact": false,
+  "gitlens.views.commits.avatars": false,
   "gitlens.views.branches.showBranchComparison": false,
   "gitlens.views.branches.pullRequests.enabled": false,
-  "gitlens.views.commits.avatars": false,
-  "gitlens.views.commits.files.compact": false,
-  "gitlens.views.commits.files.layout": "list",
-  "gitlens.views.branches.branches.layout": "list",
-  "gitlens.graph.layout": "editor",
+  "gitlens.views.branches.files.layout": "tree",
+  "gitlens.views.branches.files.compact": false,
+  "gitlens.views.branches.avatars": false,
+  "gitlens.hovers.enabled": false,
   "gitlens.graph.minimap.enabled": false,
-  "gitlens.views.commits.showBranchComparison": false,
-  "gitlens.views.searchAndCompare.avatars": false,
+  "gitlens.graph.layout": "editor",
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
 
   //! npm intellisense
   "npm-intellisense.importES6": true,
@@ -484,6 +483,7 @@
 
   //! wakatime
   "wakatime.apiKey": "waka_439a1691-65f8-4fdc-92a7-160a95a14691",
+
   //! error lens
   "errorLens.gutterIconsEnabled": true,
   "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
@@ -495,21 +495,27 @@
     "plaintext": false,
     "markdown": true
   },
-  "chat.experimental.quickQuestion.enable": true,
   "chat.editor.fontFamily": "'JetBrainsMono Nerd Font'",
+
   //! project manager
   "projectManager.sortList": "Path",
 
   //! random
-  "abracadabra.changeSignature.showInQuickFix": false,
   "vsicons.dontShowNewVersionMessage": true,
+  "vscode-pets.theme": "forest",
+  "vscode-pets.petType": "dog",
+  "vscode-pets.petSize": "medium",
+  "vscode-pets.petColor": "white",
+  "prettier.singleQuote": true,
   "liveshare.accessibility.accessibilityFeaturesEnabled": "off",
   "javascriptBooster.logLevel": "verbose",
   "githubRepositories.indexing.cacheSizeLimit": 500,
-  "editor.foldingImportsByDefault": true,
   "errorLens.scrollbarHackEnabled": true,
-  "vscode-pets.petSize": "small",
-  "vscode-pets.petColor": "white",
-  "vscode-pets.petType": "dog",
-  "diffEditor.renderSideBySide": false
+  "editor.foldingImportsByDefault": true,
+  "abracadabra.changeSignature.showInQuickFix": false,
+  "fonted.font": "JetBrainsMono Nerd Font",
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path.mac": "/Users/ewhanhan/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+    "vscode-kubernetes.minikube-path.mac": "/Users/ewhanhan/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
+  }
 }
