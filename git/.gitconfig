@@ -64,7 +64,25 @@
 	log = true
 	
 [pull]
+
 	rebase = true
 
 [include]
+
 	path = ~/.gitalias.txt
+
+[diff]
+
+  tool = default-difftool
+
+[difftool "default-difftool"]
+
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+
+  tool = code
+
+[mergetool "code"]
+
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
