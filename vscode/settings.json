@@ -206,8 +206,6 @@
   "explorer.sortOrder": "filesFirst",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
   "files.simpleDialog.enable": true,
   "files.exclude": {
     "**/.git": true,
@@ -358,13 +356,17 @@
   "cSpell.allowCompoundWords": true,
   "cSpell.userWords": [
     "adblocker",
+    "airbnb",
     "alchool",
     "checkin",
     "clsx",
     "clusterer",
     "describedby",
     "Elems",
+    "emids",
+    "Emids",
     "Emiter",
+    "Epulse",
     "Ewhan",
     "EWHAN",
     "exif",
@@ -455,7 +457,6 @@
   "gitlens.views.commits.showBranchComparison": false,
   "gitlens.views.commits.pullRequests.showForBranches": false,
   "gitlens.views.commits.pullRequests.enabled": false,
-  "gitlens.views.commits.files.layout": "list",
   "gitlens.views.commits.files.compact": false,
   "gitlens.views.commits.avatars": false,
   "gitlens.views.branches.showBranchComparison": false,
@@ -486,7 +487,7 @@
 
   //! error lens
   "errorLens.gutterIconsEnabled": true,
-  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
+  "errorLens.enabledDiagnosticLevels": ["warning", "info"],
 
   //! copilot
   "github.copilot.enable": {
@@ -517,5 +518,21 @@
   "vs-kubernetes": {
     "vscode-kubernetes.helm-path.mac": "/Users/ewhanhan/.vs-kubernetes/tools/helm/darwin-arm64/helm",
     "vscode-kubernetes.minikube-path.mac": "/Users/ewhanhan/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
-  }
+  },
+
+  //! vim
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.smartRelativeLine": true,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "files.trimFinalNewlines": true
 }
