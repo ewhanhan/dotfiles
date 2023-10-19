@@ -202,6 +202,7 @@
   "npm.fetchOnlinePackageInfo": true,
 
   //! notifications
+  "window.commandCenter": false,
   "window.dialogStyle": "custom",
   "explorer.sortOrder": "filesFirst",
   "explorer.confirmDragAndDrop": false,
