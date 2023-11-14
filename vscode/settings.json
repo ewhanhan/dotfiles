@@ -62,13 +62,10 @@
     "**/yarn.lock": true,
     "**/build": true
   },
-
-  //! workbench
-  "workbench.activityBar.visible": true,
   "workbench.editor.enablePreview": false,
   "workbench.editor.tabSizing": "fit",
   "workbench.editor.preferHistoryBasedLanguageDetection": true,
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Gruvbox Dark Soft",
   "workbench.productIconTheme": "macos-modern",
   "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
@@ -126,6 +123,8 @@
   "editor.renderWhitespace": "none",
   "editor.folding": false,
   "editor.accessibilitySupport": "off",
+  "files.trimFinalNewlines": true,
+  "files.autoGuessEncoding": true,
 
   //! cursor
   "editor.smoothScrolling": true,
@@ -173,7 +172,6 @@
   //! zen
   "zenMode.fullScreen": false,
   "zenMode.centerLayout": false,
-  "zenMode.hideTabs": false,
   "zenMode.silentNotifications": false,
   "zenMode.hideActivityBar": false,
 
@@ -191,6 +189,7 @@
   "git.openRepositoryInParentFolders": "always",
   "git.inputValidationLength": 100,
   "git.inputValidationSubjectLength": 100,
+  "git.ignoreRebaseWarning": true,
 
   //! scm
   "scm.defaultViewMode": "tree",
@@ -225,7 +224,8 @@
     "**/pnpm-lock.yaml": true,
     "**/tmp": true,
     "**/yarn.lock": true,
-    "**/.ipynb_checkpoints": true
+    "**/.ipynb_checkpoints": true,
+    "**/__pycache__": true
   },
   "typescript.tsserver.maxTsServerMemory": 4096,
 
@@ -295,21 +295,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.associations": {
-    "*.css": "css"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -336,7 +321,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
   },
 
   "css.lint.boxModel": "warning",
@@ -381,6 +368,7 @@
     "oidc",
     "Pokedex",
     "raam",
+    "recog",
     "roboto",
     "setuser",
     "SIGNUP",
@@ -389,6 +377,7 @@
     "Synogram",
     "tailwindcss",
     "twilio",
+    "uuidv",
     "webp"
   ],
   "cSpell.enableFiletypes": ["!json", "!jsonc", "!json5"],
@@ -493,14 +482,55 @@
   //! copilot
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
+    "yaml": true,
     "plaintext": false,
-    "markdown": true
+    "markdown": false
   },
   "chat.editor.fontFamily": "'JetBrainsMono Nerd Font'",
 
   //! project manager
-  "projectManager.sortList": "Path",
+  "projectManager.sortList": "Saved",
+
+  //! vim
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.smartRelativeLine": true,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
+  //! python
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.diagnostics.sourceMapsEnabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll": true
+    }
+  },
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.addImport.exactMatchOnly": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.languageServer": "Pylance",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "jupyter.showVariableViewWhenDebugging": true,
+  "python.terminal.activateEnvironment": false,
+  "isort.check": true,
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.diagnosticMode": "workspace",
 
   //! random
   "vsicons.dontShowNewVersionMessage": true,
@@ -520,20 +550,29 @@
     "vscode-kubernetes.helm-path.mac": "/Users/ewhanhan/.vs-kubernetes/tools/helm/darwin-arm64/helm",
     "vscode-kubernetes.minikube-path.mac": "/Users/ewhanhan/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
   },
-
-  //! vim
-  "vim.leader": "<space>",
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
+  "draw.folder.structure.exclude": [
+    "node_modules",
+    ".git",
+    "dist",
+    ".next",
+    "out",
+    ".venv",
+    ".vscode",
+    ".nuxt",
+    ".output",
+    ".pnpm",
+    ".yarn",
+    "bower_components",
+    "logs",
+    "tmp",
+    ".ipynb_checkpoints",
+    "venv",
+    ".egg-info",
+    "__pycache__"
   ],
-  "vim.hlsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.smartRelativeLine": true,
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
-  },
-  "files.trimFinalNewlines": true
+
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.alignEntries": true,
+  "evenBetterToml.formatter.reorderKeys": true,
+  "workbench.accounts.experimental.showEntitlements": true
 }
