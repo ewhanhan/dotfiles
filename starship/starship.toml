@@ -84,4 +84,3 @@ format = "[$symbol($version )]($style)"
 command = 'z=`cat ~/.hive-ps1`; echo "[${z#"MHC/"}]"' # shows output of command
 detect_extensions = ['honey', 'comb', 'json']
 format = '[$output]($style)'
-
