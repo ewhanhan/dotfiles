@@ -1,4 +1,4 @@
-alias l="exa -lah"
+alias l="eza -lah"
 alias rm="trash"
 alias zshconfig="code ~/.zshrc"
 alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup; brew doctor;  omz update; updateOS;"
@@ -14,7 +14,7 @@ alias d=docker
 alias dc=docker-compose
 
 alias ll='ls -alF'
-alias ls="exa --icons -F -H --group-directories-first --git -1"
+alias ls="eza --icons -F -H --group-directories-first --git -1"
 
 alias cat='bat --color=always'
 alias grep='grep --color=auto'
