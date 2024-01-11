@@ -43,6 +43,10 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
+	editor = code --wait
+
+	ignorecase = false
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -53,7 +57,7 @@
 
 	defaultBranch = main
 
-	[help]
+[help]
 
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
@@ -62,6 +66,7 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	tool = code
 	
 [pull]
 
@@ -78,10 +83,6 @@
 [difftool "default-difftool"]
 
   cmd = code --wait --diff $LOCAL $REMOTE
-
-[merge]
-
-  tool = code
 
 [mergetool "code"]
 
