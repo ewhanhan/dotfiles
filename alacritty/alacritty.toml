@@ -1,0 +1,35 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+normal = { family = "JetBrainsMonoNL Nerd Font", style = "Regular" }
+size = 14
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "transparent"
+decorations_theme_variant = "None"
+# dynamic_padding = true
+dynamic_title = true
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.padding]
+x = 10
+y = 20
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{<>\t"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+thickness = 0.15
+unfocused_hollow = true
+
+[mouse]
+hide_when_typing = true
