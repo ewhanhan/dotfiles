@@ -19,7 +19,7 @@ startup_mode = "Windowed"
 title = "Alacritty"
 
 [window.padding]
-x = 10
+x = 15
 y = 20
 
 [selection]
@@ -33,3 +33,20 @@ unfocused_hollow = true
 
 [mouse]
 hide_when_typing = true
+
+[keyboard]
+bindings = [
+  # delete line command + backspace
+  { key = "Back", mods = "Command", chars = "\u0015" },
+  # delete word alt + backspace
+  { key = "Back", mods = "Alt", chars = "\u0017" },
+  # delete entire line in NVIM
+  { key = "A", mods = "Command", chars = "\u001BggVG" },
+]
+
+[[hints.enabled]]
+command = "open"
+hyperlinks = true
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+mouse = { mods = "None", enabled = true }
