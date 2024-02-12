@@ -15,6 +15,7 @@ alias dc=docker-compose
 
 alias ll='ls -alF'
 alias ls="eza --icons -F -H --group-directories-first --git -1"
+alias lsa="ls -alF"
 
 alias cat='bat --color=always'
 alias grep='grep --color=auto'
