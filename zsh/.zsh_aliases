@@ -1,5 +1,7 @@
 alias zshconfig="code ~/.zshrc"
-alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all -s; brew doctor;  omz update; updateOS;"
+alias l="eza -lah --icons"
+alias zshconfig="code ~/.zshrc"
+alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
 alias ccc="rm -rf ~/Library/Caches/*;"
 alias c="clear"
 alias s="exec zsh"
