@@ -139,7 +139,7 @@
 # alt - p : yabai -m window --toggle sticky --toggle pip
 
 # restart yabai
-hyper - z : yabai --restart-service
+hyper - q : yabai --restart-service
 
 # balance out tree of windows
 hyper - b : yabai -m space --balance
