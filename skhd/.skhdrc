@@ -129,9 +129,6 @@
 # alt - d : yabai -m window --toggle zoom-parent
 # alt - f : yabai -m window --toggle zoom-fullscreen
 
-# toggle window split type
-# alt - e : yabai -m window --toggle split
-
 # float / unfloat window and center on screen
 # alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
@@ -148,11 +145,15 @@ hyper - b : yabai -m space --balance
 hyper - m : yabai -m window --toggle zoom-fullscreen
 
 # rotate tree
-hyper - r : yabai -m space --rotate 90
+hyper - r : yabai -m space --rotate 270 
 
 # flip tree vertically
-hyper - w : yabai -m space --mirror y-axis
+hyper - y : yabai -m space --mirror y-axis
 
+# flip tree horizontally
+hyper - x : yabai -m space --mirror x-axis
+
+# toggle window split type
 hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # Navigation
