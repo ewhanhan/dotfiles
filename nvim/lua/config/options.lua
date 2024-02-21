@@ -26,5 +26,9 @@ opt.fileencoding = "utf-8"
 
 opt.confirm = false
 opt.list = false
+opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.undofile = true
+opt.showmatch = true
 
 vim.cmd([[set termguicolors]])
