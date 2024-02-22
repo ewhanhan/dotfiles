@@ -12,15 +12,15 @@ size = 14
 TERM = "xterm-256color"
 
 [window]
-decorations = "transparent"
+decorations = "buttonless"
 decorations_theme_variant = "None"
 dynamic_title = true
+dynamic_padding = false
 startup_mode = "Windowed"
-title = "Alacritty"
 
 [window.padding]
-x = 15
-y = 20
+x = 12
+y = 12 
 
 [selection]
 save_to_clipboard = true
