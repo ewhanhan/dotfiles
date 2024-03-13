@@ -9,7 +9,6 @@
 
 	name = Ewhan
 	email = ewhan.han@gmail.com
-	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChiR1yO/1NWj1X/9jSggbPkURRYXEbCA6OO9rUkbEJ+smcoBSPDzq0+dRs9+6rksqAwgROuT0iLIxXYEDUUzlTcslQQECm8lZWnyw4umxpZ/E+xmcjqomcVGC85cZBQNQf7rDaXPqtNgzsF1D/bQK49leMfDJe1BJK07CN4oVrtj0tWydmGo1zJC4QW1QcYcS+59ew1hmZnvMf90DXeTC+aHZ3qSK/7e102RSt8QLBF0ggKCKLArc5GaXNVQ9FyjL8wvuafq/mYQXyfb9Pi/Q4PjF4gqVtCYK/599tBNhkVwaLe9unIQyjHG2Byk+lckdgLxA5dYLr0WzCUnMNpKCATTvDJ1iBye4NQpIFs6rWoQC0prHMDwE4C8eOdKG434L9ofjKHqMiBc1zH5G9AzYnAPT8x4ObK9sgIL01VeCVqUo5481+0+HfWKVjClvlwbLetQ1fCwNVuATwdBhu7FI6EJ6hvWlEvsixMkm2XnlgUZ3/Xmi/7If2Rf6EjilovwAhA0Os3ub4YvFj96J/pJQhNW2ilD9J/zl/A837aoLPpi8mh/a9C5lwNXvNbcTcQE7ZFb/FJq8X1YqDPaCYaWWcJeOMGQwnx0TFTMDZTaS+bzCDjmqEg+97zCpFs4psXIwIm8MMY/rQveGhTpyc54Znfc7rbxu08CqnhRKilrEukQ==
 
 [apply]
 
@@ -63,12 +62,6 @@
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
 
-[merge]
-
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-	tool = code
-	
 [pull]
 
 	rebase = true
@@ -85,12 +78,10 @@
 
   cmd = code --wait --diff $LOCAL $REMOTE
 
-[mergetool "code"]
+[merge]
+  log = true
+  tool = code
 
+[mergetool "code"]
+  
   cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-[commit]
-	gpgsign = true
