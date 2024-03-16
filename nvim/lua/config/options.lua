@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+local g = vim.g
 local opt = vim.opt
 local o = vim.o
 opt.nu = true
@@ -32,3 +33,6 @@ opt.undofile = true
 opt.showmatch = true
 
 vim.cmd([[set termguicolors]])
+
+-- https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+g.python3_host_prog = "$HOME/.pyenv/versions/neovim3/bin/python"
