@@ -1,7 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.copilot",
-    "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.lang.docker",
     "lazyvim.plugins.extras.lang.markdown",
@@ -14,3 +12,4 @@
   },
   "version": 3
 }
+
