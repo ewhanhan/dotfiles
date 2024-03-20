@@ -13,6 +13,7 @@ alias updateOS="softwareupdate -i -a --no-scan --agree-to-license"
 
 alias d=docker
 alias dc=docker-compose
+alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
 
 alias ll='ls -alF'
 alias ls="eza --icons -F -H --group-directories-first --git -1"
