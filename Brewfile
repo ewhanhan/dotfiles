@@ -62,6 +62,7 @@ brew "virtualenv"
 brew "watchman"
 brew "wget"
 brew "yarn"
+brew "yq"
 brew "zoxide"
 brew "zsh-autocomplete"
 brew "koekeishiya/formulae/skhd"
@@ -102,6 +103,15 @@ cask "spotify"
 cask "tg-pro"
 cask "visual-studio-code"
 cask "whatsapp"
+mas "1Password for Safari", id: 1569813296
+mas "AdGuard for Safari", id: 1440147259
+mas "Amphetamine", id: 937984704
+mas "DuckDuckGo Privacy for Safari", id: 1482920575
+mas "Hover for Safari", id: 1540705431
+mas "Messenger", id: 1480068668
+mas "Numbers", id: 409203825
+mas "Velja", id: 1607635845
+mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
 vscode "albert.tabout"
 vscode "alefragnani.project-manager"
