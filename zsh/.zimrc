@@ -10,8 +10,6 @@
 
 # Sets sane Zsh built-in environment options.
 zmodule environment
-# Provides handy git aliases and functions.
-zmodule git
 # Applies correct bindkeys for input events.
 zmodule input
 # Sets a custom terminal title.
@@ -29,6 +27,10 @@ zmodule duration-info
 zmodule git-info
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 zmodule asciiship
+
+zmodule homebrew
+
+zmodule fzf
 
 #
 # Completion
@@ -58,3 +60,4 @@ zmodule zimfw/fzf
 zmodule kiesman99/zim-zoxide
 zmodule joke/zim-github-cli
 zmodule hlissner/zsh-autopair
+zmodule joke/zim-yq

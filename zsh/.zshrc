@@ -155,7 +155,6 @@ fi
 # <<< pyenv
 
 eval "$(rbenv init - zsh)"
-eval "$(zoxide init zsh)"
 
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
