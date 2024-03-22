@@ -36,3 +36,4 @@ vim.cmd([[set termguicolors]])
 
 -- https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 g.python3_host_prog = "$HOME/.pyenv/versions/neovim3/bin/python"
+g.node_host_prog = "/usr/local/bin/neovim-node-host"
