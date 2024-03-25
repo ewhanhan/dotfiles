@@ -129,20 +129,24 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-# starship
+### Source ###
+[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
+[ -f "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -f "$HOME/.fzf-tab-completion/zsh/fzf-zsh-completion.sh" ] && source "$HOME/.fzf-tab-completion/zsh/fzf-zsh-completion.sh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### Eval ###
+eval "$(rbenv init - zsh)"
+eval "$(fnm env --use-on-cd)"
+eval "$(fzf --zsh)"
+eval "$(gh copilot alias -- zsh)"
 eval "$(starship init zsh)"
 
-# iterm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PATH=$HOME/.local/bin:$PATH
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=9'
-
-# Aliases
-source $HOME/.zsh_aliases
-
-source $HOME/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
+### Export ###
+export HIVE_DEV_TUNNEL_ID=hive-ehan
+export TUNNEL_ID=hive-ehan
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ANALYTICS=1
 
 # >>> pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -153,20 +157,3 @@ if which pyenv-virtualenv-init >/dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 # <<< pyenv
-
-eval "$(rbenv init - zsh)"
-
-export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_NO_ANALYTICS=1
-
-eval "$(fnm env --use-on-cd)"
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
-
-
-### WORK ###
-export HIVE_DEV_TUNNEL_ID=hive-ehan
-export TUNNEL_ID=hive-ehan
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
