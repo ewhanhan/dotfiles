@@ -45,7 +45,7 @@ alias grep=rg
 alias sed=sd
 
 alias zshA="nvim ~/.zsh_aliases"
-alias zshC="nvim ~/.zshconfig"
+alias zshC="nvim ~/.zshrc"
 alias lg="lazygit"
 
 ############################ Alias for Python #############################
