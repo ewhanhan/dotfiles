@@ -11,7 +11,7 @@ alias npmG="npm list -g --depth=0"
 alias npmU="ncu -g | grep -oE 'npm -g.*' | xargs -I {} sh -c "{}""
 alias python="python3"
 alias updateOS="softwareupdate -i -a --no-scan --agree-to-license"
-
+alias zimU="zimfw install; zimfw update; zimfw upgrade"
 alias d=docker
 alias dc=docker-compose
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
