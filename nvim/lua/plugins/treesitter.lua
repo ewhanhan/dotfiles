@@ -15,6 +15,7 @@ return {
       "yaml",
       "toml",
       "python",
+      "bash",
     })
   end,
 }
