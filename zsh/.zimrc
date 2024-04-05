@@ -39,4 +39,3 @@ zmodule joke/zim-github-cli
 zmodule hlissner/zsh-autopair
 zmodule joke/zim-yq
 
-zmodule Aloxaf/fzf-tab
