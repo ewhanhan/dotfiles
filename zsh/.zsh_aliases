@@ -15,9 +15,11 @@ alias d=docker
 alias dc=docker-compose
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
 alias uuu="brewup; npmU; zimU; mas upgrade; macU"
+
 alias ll='ls -alF'
 alias ls="eza --icons -F -H --group-directories-first --git -1"
 alias lsa="ls -alF"
+alias myip="curl ifconfig.me"
 
 alias cat='bat --color=always'
 alias grep='grep --color=auto'
