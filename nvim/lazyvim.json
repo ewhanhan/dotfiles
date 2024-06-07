@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.copilot",
+    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.lang.docker",
     "lazyvim.plugins.extras.lang.go",
@@ -12,7 +13,7 @@
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.gitui",
     "lazyvim.plugins.extras.util.mini-hipatterns",
-    "lazyvim.plugins.extras.editor.aerial"
+    "lazyvim.plugins.extras.vscode"
   ],
   "news": {
     "NEWS.md": "5204"
