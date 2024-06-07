@@ -1,0 +1,35 @@
+" Leader key
+let mapleader = ","
+let maplocalleader = " "
+
+" Plugins
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set textobj-entire
+set ReplaceWithRegister
+set highlightedyank
+
+let g:argtextobj_pairs="[:],(:),<:>"
+
+set showmode
+set so=5
+set incsearch
+set nu
+set ignorecase
+set smartcase
+set hlsearch
+set wrapscan
+set notimeout
+set relativenumber
+set number
+set wrapscan
+
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+" Mappings
+inoremap jk <Esc>
+
