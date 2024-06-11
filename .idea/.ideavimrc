@@ -32,4 +32,13 @@ set idearefactormode=keep
 
 " Mappings
 inoremap jk <Esc>
+imap jk <Esc>
 
+" Window management
+nnoremap <leader>ww <C-w>w
+nnoremap <leader>wd <C-w>q
+nnoremap <leader>w- :split<CR>
+nnoremap <leader>w| :vsplit<CR>
+nnoremap <leader>- :split<CR>
+nnoremap <leader>| :vsplit<CR>
+nnoremap <leader>wm :wincmd _<Bar>:wincmd \|<Bar>:wincmd =<CR>
