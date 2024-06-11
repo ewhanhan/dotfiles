@@ -16,6 +16,7 @@ alias dc=docker-compose
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
 alias uuu="brewup; npmU; zimU; mas upgrade; macU"
 alias N="npm run"
+alias buz="brew uninstall --zap"
 
 alias ll='ls -alF'
 alias ls="eza --icons -F -H --group-directories-first --git -1"
