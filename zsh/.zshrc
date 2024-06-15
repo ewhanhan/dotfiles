@@ -91,7 +91,6 @@ unset key
 # eval
 # ------------------
 
-eval "$(rbenv init - zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(gh copilot alias -- zsh)"
 eval "$(starship init zsh)"
