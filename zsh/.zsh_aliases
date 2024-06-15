@@ -1,3 +1,4 @@
+alias EDITOR="code --wait"
 alias zshconfig="code ~/.zshrc"
 alias l="eza -lah --icons"
 alias zshconfig="code ~/.zshrc"
