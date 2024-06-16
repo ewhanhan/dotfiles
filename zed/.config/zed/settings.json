@@ -13,7 +13,10 @@
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13,
     "copy_on_select": true,
-    "use_system_clipboardsk-zed-27ZC98Of6KOVj5xWhDHyT3BlbkFJLkMweYaFan53ZuGqO21p": "always",
+    "blinking": "on"
+  },
+  "vim": {
+    "use_system_clipboard": "always",
     "use_multiline_find": true
   },
   "base_keymap": "VSCode",
