@@ -16,6 +16,7 @@
     "use_system_clipboardsk-zed-27ZC98Of6KOVj5xWhDHyT3BlbkFJLkMweYaFan53ZuGqO21p": "always",
     "use_multiline_find": true
   },
+  "base_keymap": "VSCode",
   "relative_line_numbers": true,
   "vim_mode": true,
   "ui_font_size": 13,
