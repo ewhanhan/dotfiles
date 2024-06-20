@@ -23,8 +23,8 @@
   "base_keymap": "VSCode",
   "relative_line_numbers": true,
   "vim_mode": true,
-  "ui_font_size": 13,
-  "buffer_font_size": 13,
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
   "languages": {
     "JavaScript": {
       "code_actions_on_format": {
