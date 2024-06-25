@@ -82,9 +82,6 @@ unset key
 # ------------------
 
 [ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
-[ -f "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
-[ -f "$HOME/.fzf-tab-completion/zsh/fzf-zsh-completion.sh" ] && source "$HOME/.fzf-tab-completion/zsh/fzf-zsh-completion.sh"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "$HOME/.zsh_keybindings" ] && source "$HOME/.zsh_keybindings"
 
 # ------------------

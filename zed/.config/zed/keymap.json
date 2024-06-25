@@ -3,11 +3,58 @@
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
+      "ctrl-w d": "diagnostics::Deploy",
       "ctrl-w t": "terminal_panel::ToggleFocus",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "h": "project_panel::CollapseSelectedEntry",
+      "cmd-left": "project_panel::CollapseAllEntries",
+      "l": "project_panel::ExpandSelectedEntry",
+      "cmd-n": "project_panel::NewFile",
+      "alt-n": "project_panel::NewDirectory",
+      "cmd-x": "project_panel::Cut",
+      "cmd-c": "project_panel::Copy",
+      "cmd-v": "project_panel::Paste",
+      "cmd-d": "project_panel::Duplicate",
+      "cmd-r": "project_panel::Rename",
+      "cmd-u": "project_panel::SelectParent",
+      "cmd-f": "project_panel::NewSearchInDirectory",
+      "alt-r": "project_panel::RevealInFinder",
+      "ctrl-c": "project_panel::CopyRelativePath",
+      "ctrl-shift-c": "project_panel::CopyPath",
+      "backspace": ["project_panel::Trash", { "skip_prompt": false }],
+      "delete": ["project_panel::Trash", { "skip_prompt": false }],
+      "cmd-backspace": ["project_panel::Delete", { "skip_prompt": false }],
+      "cmd-delete": ["project_panel::Delete", { "skip_prompt": false }],
+      "shift-down": "menu::SelectNext",
+      "shift-up": "menu::SelectPrev",
+      "escape": "menu::Cancel",
+      "cmd-w": "workspace::ToggleLeftDock",
+      "cmd-shift-w": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-shift-e": "project_panel::ToggleFocus"
     }
   }
 ]

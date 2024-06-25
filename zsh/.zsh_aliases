@@ -11,7 +11,7 @@ alias s="exec zsh"
 alias npmG="npm list -g --depth=0"
 alias python="python3"
 alias macU="softwareupdate -i -a --no-scan --agree-to-license"
-alias zimU="zimfw install; zimfw update; zimfw upgrade"
+alias zimU="zimfw install; zimfw uninstall; zimfw update; zimfw upgrade"
 alias d=docker
 alias dc=docker-compose
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
