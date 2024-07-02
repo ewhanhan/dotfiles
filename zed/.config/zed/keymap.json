@@ -14,13 +14,24 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": ["workspace::SendKeystrokes", "escape"]
+      "j k": ["workspace::SendKeystrokes", "escape"],
+      "j j": ["workspace::SendKeystrokes", "escape"]
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "Editor && vim_mode == visual",
     "bindings": {
-      "j j": ["workspace::SendKeystrokes", "escape"]
+      "<": "editor::Outdent",
+      ">": "editor::Indent"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "<": "editor::Outdent",
+      ">": "editor::Indent",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
     }
   },
   {
@@ -55,6 +66,17 @@
   {
     "bindings": {
       "cmd-shift-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-s": [
+        "vim::PushOperator",
+        {
+          "AddSurrounds": {}
+        }
+      ]
     }
   }
 ]
