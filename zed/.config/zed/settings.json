@@ -1,4 +1,5 @@
 {
+  "autosave": "on_focus_change",
   "tabs": {
     // Show git status colors in the editor tabs.
     "git_status": true,

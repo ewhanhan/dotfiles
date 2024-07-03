@@ -1,5 +1,60 @@
 [
   {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-k": "editor::ContextMenuPrev",
+      "ctrl-j": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Pane && not_editing",
+    "bindings": {
+      "n": "search::SelectNextMatch",
+      "N": "search::SelectPrevMatch",
+      "enter": "search::SelectNextMatch"
+    }
+  },
+  {
+    "context": "Editor && vim_mode != insert && (vim_operator == none || vim_operator == n) && !VimWaiting",
+    "bindings": {
+      "space f s": "workspace::Save",
+      "space f r": "project_panel::Rename",
+      "space e": "workspace::ToggleLeftDock",
+      "space p f": "file_finder::Toggle",
+      "space w |": "pane::SplitRight",
+      "space w -": "pane::SplitDown",
+      "space w v": "pane::SplitRight",
+      "space w s": "pane::SplitDown",
+      "space w H": ["workspace::SwapPaneInDirection", "Left"],
+      "space w L": ["workspace::SwapPaneInDirection", "Right"],
+      "space w K": ["workspace::SwapPaneInDirection", "Up"],
+      "space w J": ["workspace::SwapPaneInDirection", "Down"],
+      "space w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "space w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "space w j": ["workspace::ActivatePaneInDirection", "Down"],
+      "space w d": [
+        "pane::CloseActiveItem",
+        {
+          "saveIntent": "skip"
+        }
+      ],
+      "space c f": "editor::Format",
+      "space s f": "buffer_search::Deploy",
+      "space s p": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    // ======= Normal mode bindings =======
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
@@ -12,63 +67,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "j k": ["workspace::SendKeystrokes", "escape"],
-      "j j": ["workspace::SendKeystrokes", "escape"]
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "<": "editor::Outdent",
-      ">": "editor::Indent"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "<": "editor::Outdent",
-      ">": "editor::Indent",
-      "alt-k": "editor::MoveLineUp",
-      "alt-j": "editor::MoveLineDown"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "h": "project_panel::CollapseSelectedEntry",
-      "cmd-left": "project_panel::CollapseAllEntries",
-      "l": "project_panel::ExpandSelectedEntry",
-      "cmd-n": "project_panel::NewFile",
-      "alt-n": "project_panel::NewDirectory",
-      "cmd-x": "project_panel::Cut",
-      "cmd-c": "project_panel::Copy",
-      "cmd-v": "project_panel::Paste",
-      "cmd-d": "project_panel::Duplicate",
-      "cmd-r": "project_panel::Rename",
-      "cmd-u": "project_panel::SelectParent",
-      "cmd-f": "project_panel::NewSearchInDirectory",
-      "alt-r": "project_panel::RevealInFinder",
-      "ctrl-c": "project_panel::CopyRelativePath",
-      "ctrl-shift-c": "project_panel::CopyPath",
-      "backspace": ["project_panel::Trash", { "skip_prompt": false }],
-      "delete": ["project_panel::Trash", { "skip_prompt": false }],
-      "cmd-backspace": ["project_panel::Delete", { "skip_prompt": false }],
-      "cmd-delete": ["project_panel::Delete", { "skip_prompt": false }],
-      "shift-down": "menu::SelectNext",
-      "shift-up": "menu::SelectPrev",
-      "escape": "menu::Cancel",
-      "cmd-w": "workspace::ToggleLeftDock",
-      "cmd-shift-w": "workspace::ToggleLeftDock"
-    }
-  },
-  {
-    "bindings": {
-      "cmd-shift-e": "project_panel::ToggleFocus"
-    }
-  },
-  {
+    // ======= Visual mode bindings =======
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
       "shift-s": [
@@ -77,6 +76,47 @@
           "AddSurrounds": {}
         }
       ]
+    }
+  },
+  {
+    // ======= Insert mode bindings =======
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j k": ["workspace::SwitchMode", "Normal"],
+      "j j": ["workspace::SwitchMode", "Normal"]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    // ======= Project panel bindings =======
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "n": "project_panel::NewFile",
+      "shift-n": "project_panel::NewDirectory",
+      "escape": "menu::Cancel",
+      "cmd-w": "workspace::ToggleLeftDock",
+      "cmd-shift-w": "workspace::ToggleLeftDock",
+      "space e": "workspace::ToggleLeftDock",
+      "cmd-shift-e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    // ======= Empty editor =======
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-w t": "terminal_panel::ToggleFocus",
+      "ctrl-w d": "diagnostics::Deploy"
     }
   }
 ]
