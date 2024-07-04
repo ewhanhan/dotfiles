@@ -1,14 +1,14 @@
 {
   "autosave": "on_focus_change",
   "tabs": {
-    // Show git status colors in the editor tabs.
-    "git_status": true,
     // Position of the close button on the editor tabs.
     "close_position": "left"
   },
+  "tab_bar": {
+    // Whether or not to show the navigation history buttons.
+    "show_nav_history_buttons": false
+  },
   "toolbar": {
-    // Whether to show breadcrumbs.
-    "breadcrumbs": true,
     // Whether to show quick action buttons.
     "quick_actions": false
   },
@@ -37,8 +37,10 @@
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 12,
     "copy_on_select": true,
-    "line_height": "standard"
+    "line_height": "standard",
+    "copy_on_select": true
   },
+  "multi_cursor_modifier": "cmd_or_ctrl",
   "vim_mode": true,
   "base_keymap": "VSCode",
   "relative_line_numbers": true,
