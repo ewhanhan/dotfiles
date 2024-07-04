@@ -1,5 +1,12 @@
 [
   {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
       "ctrl-k": "editor::ContextMenuPrev",
@@ -41,7 +48,8 @@
       ],
       "space c f": "editor::Format",
       "space s f": "buffer_search::Deploy",
-      "space s p": "pane::DeploySearch"
+      "space s p": "pane::DeploySearch",
+      "space b e": "tab_switcher::Toggle"
     }
   },
   {
@@ -54,16 +62,16 @@
     }
   },
   {
-    // ======= Normal mode bindings =======
+    // ======= Normal mode bindings =
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
       "ctrl-w d": "diagnostics::Deploy",
       "ctrl-w t": "terminal_panel::ToggleFocus",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "J": "pane::ActivatePrevItem",
+      "K": "pane::ActivateNextItem",
+      "ctrl-w |": "pane::SplitRight",
+      "ctrl-w -": "pane::SplitDown"
     }
   },
   {
