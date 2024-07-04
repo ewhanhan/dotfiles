@@ -82,8 +82,8 @@
     // ======= Insert mode bindings =======
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      "j k": ["workspace::SwitchMode", "Normal"],
-      "j j": ["workspace::SwitchMode", "Normal"]
+      "j k": ["vim::SwitchMode", "Normal"],
+      "j j": ["vim::SwitchMode", "Normal"]
     }
   },
   {
@@ -107,7 +107,10 @@
       "cmd-w": "workspace::ToggleLeftDock",
       "cmd-shift-w": "workspace::ToggleLeftDock",
       "space e": "workspace::ToggleLeftDock",
-      "cmd-shift-e": "workspace::ToggleLeftDock"
+      "space f": "file_finder::Toggle",
+      "cmd-shift-e": "workspace::ToggleLeftDock",
+      "x": "project_panel::Cut",
+      "p": "project_panel::Paste"
     }
   },
   {
@@ -115,6 +118,7 @@
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       "space e": "workspace::ToggleLeftDock",
+      "space f": "file_finder::Toggle",
       "ctrl-w t": "terminal_panel::ToggleFocus",
       "ctrl-w d": "diagnostics::Deploy"
     }
