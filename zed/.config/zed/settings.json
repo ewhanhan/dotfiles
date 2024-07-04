@@ -1,4 +1,17 @@
 {
+  "theme": "Ayu Mirage",
+  "soft_wrap": "preferred_line_length",
+  "assistant": {
+    "version": "1",
+    "button": false,
+    "provider": {
+      "name": "openai",
+      "default_model": "gpt-4"
+    }
+  },
+  "outline_panel": {
+    // "button": false
+  },
   "autosave": "on_focus_change",
   "tabs": {
     // Position of the close button on the editor tabs.
@@ -12,12 +25,13 @@
     // Whether to show quick action buttons.
     "quick_actions": false
   },
+  "tab_size": 2,
   "preview_tabs": {
     // Whether preview tabs should be enabled.
     // Preview tabs allow you to open files in preview mode, where they close automatically
     // when you switch to another file unless you explicitly pin them.
     // This is useful for quickly viewing files without cluttering your workspace.
-    "enabled": false,
+    "enabled": true,
     // Whether to open tabs in preview mode when selected from the file finder.
     "enable_preview_from_file_finder": false,
     // Whether a preview tab gets replaced when code navigation is used to navigate away from the tab.
@@ -37,8 +51,7 @@
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 12,
     "copy_on_select": true,
-    "line_height": "standard",
-    "copy_on_select": true
+    "line_height": "standard"
   },
   "multi_cursor_modifier": "cmd_or_ctrl",
   "vim_mode": true,
@@ -46,10 +59,11 @@
   "relative_line_numbers": true,
   "vim": {
     "use_system_clipboard": "always",
-    "use_multiline_find": true
+    "use_multiline_find": true,
+    "use_smartcase_find": true
   },
   "ui_font_size": 14,
-  "ui_font_family": "Zed Mono",
+  "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 14,
   "buffer_line_height": "standard",
   "languages": {
@@ -86,7 +100,8 @@
     "eslint": {
       "settings": {
         "problems": {
-          "shortenToSingleLine": true
+          "shortenToSingleLine": true,
+          "autoFixOnSave": true
         }
       }
     }
