@@ -44,10 +44,6 @@ alias 8='cd -8'
 alias 9='cd -9'
 alias _='sudo '
 
-alias cat=bat
-alias grep=rg
-alias sed=sd
-
 alias lg="lazygit"
 
 ############################ Work #############################
@@ -55,7 +51,6 @@ alias hRestart="hStop; hStart"
 alias hStop="hcli dev stop"
 alias hStart="hcli dev start"
 alias hCleanStart="hStop; git cleanest; npm i; hStart"
-
 
 npmU() {
     echo "Checking for updates for globally installed npm packages..."
