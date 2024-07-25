@@ -1,4 +1,11 @@
 {
+  "tabs": {
+    // Show git status colors in the editor tabs.
+    "git_status": true,
+    "close_position": "left",
+    // Whether to show the file icon for a tab.
+    "file_icons": true
+  },
   "theme": "Ayu Mirage",
   "soft_wrap": "preferred_line_length",
   "assistant": {
@@ -13,10 +20,7 @@
     // "button": false
   },
   "autosave": "on_focus_change",
-  "tabs": {
-    // Position of the close button on the editor tabs.
-    "close_position": "left"
-  },
+
   "tab_bar": {
     // Whether or not to show the navigation history buttons.
     "show_nav_history_buttons": false
