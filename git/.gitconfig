@@ -1,5 +1,5 @@
 [filter "lfs"]
-  
+
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -7,8 +7,20 @@
 
 [user]
 
-	name = Ewhan
 	email = 40779221+ewhanhan@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzxzOUH8tObX0Gr6lVNQ1dZo+ss3kY4HrrBmayfouNB
+
+[gpg]
+
+  format = ssh
+
+[gpg "ssh"]
+
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+
+  gpgsign = true
 
 [apply]
 
@@ -83,5 +95,5 @@
   tool = code
 
 [mergetool "code"]
-  
+
   cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
