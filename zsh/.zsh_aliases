@@ -46,6 +46,13 @@ alias _='sudo '
 
 alias lg="lazygit"
 
+alias ncu-patch="npx npm-check-updates -i --target patch"
+alias ncu-patch-dev="npx npm-check-updates -i --target patch --dep dev"
+alias ncu-minor="npx npm-check-updates -i --target minor"
+alias ncu-minor-dev="npx npm-check-updates -i --target minor --dep dev"
+alias ncu-major="npx npm-check-updates -i --target major"
+alias ncu-major-dev="npx npm-check-updates -i --target major --dep dev"
+
 ############################ Work #############################
 alias hRestart="hStop; hStart"
 alias hStop="hcli dev stop"
