@@ -1,4 +1,7 @@
 {
+  "language_models": {
+    "openai": {}
+  },
   "tabs": {
     // Show git status colors in the editor tabs.
     "git_status": true,
@@ -9,12 +12,13 @@
   "theme": "Ayu Mirage",
   "soft_wrap": "preferred_line_length",
   "assistant": {
-    "version": "1",
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4"
+    },
+    "version": "2",
     "button": false,
-    "provider": {
-      "name": "openai",
-      "default_model": "gpt-4"
-    }
+    "provider": null
   },
   "outline_panel": {
     // "button": false
