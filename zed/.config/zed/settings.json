@@ -108,7 +108,6 @@
     "eslint": {
       "settings": {
         "problems": {
-          "shortenToSingleLine": true,
           "autoFixOnSave": true
         }
       }
