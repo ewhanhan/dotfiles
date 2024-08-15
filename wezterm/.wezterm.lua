@@ -57,64 +57,106 @@ config.window_padding = {
 config.hide_tab_bar_if_only_one_tab = true
 
 config.leader = {
-  key = 'w',
-  mods = 'CTRL',
+  key = "w",
+  mods = "CTRL",
   timeout_milliseconds = 1000
 }
 config.keys = {
   {
-    key = '|',
-    mods = 'LEADER',
+    key = "|",
+    mods = "LEADER",
     action = act.SplitHorizontal {
-      domain = 'CurrentPaneDomain'
-    },
+      domain = "CurrentPaneDomain"
+    }
   },
   {
-    key = '-',
-    mods = 'LEADER',
+    key = "-",
+    mods = "LEADER",
     action = act.SplitVertical {
-      domain = 'CurrentPaneDomain'
-    },
+      domain = "CurrentPaneDomain"
+    }
   },
   {
-    key = 'a',
-    mods = 'LEADER|CTRL',
+    key = "a",
+    mods = "LEADER|CTRL",
     action = act.SendKey {
-      key = 'a',
-      mods = 'CTRL'
-    },
+      key = "a",
+      mods = "CTRL"
+    }
   },
   {
-    key = 'w',
-    mods = 'CMD',
-    action = act.DisableDefaultAssignment,
+    key = "w",
+    mods = "CMD",
+    action = act.DisableDefaultAssignment
   },
   {
-    key = 'w',
-    mods = 'CMD',
+    key = "w",
+    mods = "CMD",
     action = act.CloseCurrentPane {
       confirm = false
-    },
+    }
   },
   {
-    key = 'K',
-    mods = 'CTRL|SHIFT',
-    action = act.ClearScrollback 'ScrollbackOnly',
+    key = "K",
+    mods = "CTRL|SHIFT",
+    action = act.ClearScrollback "ScrollbackOnly"
   },
   -- Clears the scrollback and viewport leaving the prompt line the new first line.
   {
-    key = 'K',
-    mods = 'CTRL|SHIFT',
-    action = act.ClearScrollback 'ScrollbackAndViewport',
+    key = "K",
+    mods = "CTRL|SHIFT",
+    action = act.ClearScrollback "ScrollbackAndViewport"
   },
   {
     mods = "CMD",
     key = "Backspace",
-    action = act.SendKey({
-      mods = "CTRL",
-      key = "u"
-    })
+    action = act.SendKey(
+      {
+        mods = "CTRL",
+        key = "u"
+      }
+    )
   },
+  {
+    mods = "OPT",
+    key = "LeftArrow",
+    action = act.SendKey(
+      {
+        mods = "ALT",
+        key = "b"
+      }
+    )
+  },
+  {
+    mods = "OPT",
+    key = "RightArrow",
+    action = act.SendKey(
+      {
+        mods = "ALT",
+        key = "f"
+      }
+    )
+  },
+  {
+    mods = "CMD",
+    key = "LeftArrow",
+    action = act.SendKey(
+      {
+        mods = "CTRL",
+        key = "a"
+      }
+    )
+  },
+  {
+    mods = "CMD",
+    key = "RightArrow",
+    action = act.SendKey(
+      {
+        mods = "CTRL",
+        key = "e"
+      }
+    )
+  }
 }
 
 return config
