@@ -1,6 +1,8 @@
 {
   "language_models": {
-    "openai": {}
+    "openai": {
+            "version": "1"
+        }
   },
   "tabs": {
     // Show git status colors in the editor tabs.
