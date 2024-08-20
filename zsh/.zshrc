@@ -78,7 +78,7 @@ unset key
 # }}} End configuration added by Zim install
 
 # ------------------
-# Source 
+# Source
 # ------------------
 
 [ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
@@ -102,7 +102,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
 
 # ------------------
-# pyenv 
+# pyenv
 # ------------------
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -113,6 +113,13 @@ if which pyenv-virtualenv-init >/dev/null; then
 fi
 
 # ------------------
-# zstyle modifications 
+# zstyle modifications
 # ------------------
 
+
+export PNPM_HOME="$HOME/Library/pnpm"
+export YARN_HOME="$HOME/.yarn"
+export YARN_GLOBAL_CONFIG="$HOME/.config/yarn/global"
+
+# Combine paths to avoid multiple exports
+export PATH="$PNPM_HOME:$YARN_HOME/bin:$YARN_GLOBAL_CONFIG/node_modules/.bin:$PATH"
