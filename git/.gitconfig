@@ -9,6 +9,7 @@
 
 	email = 40779221+ewhanhan@users.noreply.github.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzxzOUH8tObX0Gr6lVNQ1dZo+ss3kY4HrrBmayfouNB
+	name = ewhanhan
 
 [gpg]
 
