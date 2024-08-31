@@ -24,7 +24,7 @@ alias ls="eza --icons -F -H --group-directories-first --git -1"
 alias lsa="ls -alF"
 alias myip="curl ifconfig.me"
 
-alias cat='bat --color=always'
+alias bat='bat --color=always'
 alias grep='grep --color=auto'
 
 alias tmuxS="tmux attach || tmux new -s main"
@@ -61,24 +61,22 @@ alias hCleanStart="hStop; git cleanest; npm i; hStart"
 
 npmU() {
     echo "Checking for updates for globally installed npm packages..."
-    # Use ncu to list globally installed npm packages and their available updates
-    # -g flag is used to target global packages
     ncu -g |
-    {
-        echo "Searching for globally installed npm packages..."
-        # Use Ripgrep (rg) to extract lines containing npm global packages
-        # -o flag is used to only output the matched parts of the line
-        # --only-matching flag disables the default behavior of showing the whole matching line
-        # Pattern 'npm -g.*' matches lines containing npm global packages
-        while read -r line; do
-            # Display the matched npm package name
-            echo -e "\n"
-            printf "Found npm package: $line"
-            # Execute each line as a command
-            sh -c "$line"
-            # Provide feedback after executing the command
-            echo "Executed update command for $line"
-        done < <(rg -o --only-matching 'npm -g.*')
-        echo "Update check and execution completed."
-    }
+        {
+            echo "Searching for globally installed npm packages..."
+            # Use Ripgrep (rg) to extract lines containing npm global packages
+            # -o flag is used to only output the matched parts of the line
+            # --only-matching flag disables the default behavior of showing the whole matching line
+            # Pattern 'npm -g.*' matches lines containing npm global packages
+            while read -r line; do
+                # Display the matched npm package name
+                echo -e "\n"
+                printf "Found npm package: $line"
+                # Execute each line as a command
+                sh -c "$line"
+                # Provide feedback after executing the command
+                echo "Executed update command for $line"
+            done < <(rg -o --only-matching 'npm -g.*')
+            echo "Update check and execution completed."
+        }
 }
