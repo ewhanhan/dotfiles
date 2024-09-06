@@ -12,8 +12,8 @@ alias npmG="npm list -g --depth=0"
 alias python="python3"
 alias macU="softwareupdate -i -a --no-scan --agree-to-license"
 alias zimU="zimfw install; zimfw uninstall; zimfw update; zimfw upgrade"
-alias d=docker
-alias dc=docker-compose
+alias d="docker"
+alias dc="docker-compose"
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
 alias uuu="brewup; npmU; zimU; mas upgrade; macU"
 alias N="npm run"
@@ -22,7 +22,6 @@ alias buz="brew uninstall --zap"
 alias ll='ls -alF'
 alias ls="eza --icons -F -H --group-directories-first --git -1"
 alias lsa="ls -alF"
-alias myip="curl ifconfig.me"
 
 alias bat='bat --color=always'
 alias grep='grep --color=auto'
@@ -42,18 +41,15 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-alias _='sudo '
+alias _='sudo'
 
 alias lg="lazygit"
 
 alias ncu-patch="npx npm-check-updates -i --target patch"
-alias ncu-patch-dev="npx npm-check-updates -i --target patch --dep dev"
 alias ncu-minor="npx npm-check-updates -i --target minor"
-alias ncu-minor-dev="npx npm-check-updates -i --target minor --dep dev"
-alias ncu-major="npx npm-check-updates -i --target major"
-alias ncu-major-dev="npx npm-check-updates -i --target major --dep dev"
 
 ############################ Work #############################
+
 alias hRestart="hStop; hStart"
 alias hStop="hcli dev stop"
 alias hStart="hcli dev start"
