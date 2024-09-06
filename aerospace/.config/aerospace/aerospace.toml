@@ -88,6 +88,7 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+alt-a = 'workspace A'
 alt-b = 'workspace B'
 alt-c = 'workspace C'
 alt-e = 'workspace E'
@@ -98,6 +99,7 @@ alt-t = 'workspace T'
 alt-v = 'workspace V'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+alt-shift-a = 'move-node-to-workspace A'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-e = 'move-node-to-workspace E'
@@ -140,3 +142,6 @@ run = "move-node-to-workspace T"
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace V"
+
+[workspace-to-monitor-force-assignment]
+A = "secondary"
