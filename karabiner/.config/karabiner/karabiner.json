@@ -6,6 +6,7 @@
         "rules": [
           {
             "description": "Right Option Key → Hyper Key (⌃⌥⇧⌘)",
+            "enabled": false,
             "manipulators": [
               {
                 "from": {
@@ -24,6 +25,7 @@
           },
           {
             "description": "Map Tab to Hyper when held",
+            "enabled": false,
             "manipulators": [
               {
                 "from": {
@@ -46,9 +48,7 @@
       "devices": [
         {
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
-            "is_pointing_device": false,
             "product_id": 835,
             "vendor_id": 1452
           },
@@ -62,9 +62,7 @@
         {
           "disable_built_in_keyboard_if_exists": true,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
-            "is_pointing_device": false,
             "product_id": 33,
             "vendor_id": 1278
           }
@@ -72,7 +70,6 @@
         {
           "disable_built_in_keyboard_if_exists": true,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
             "is_pointing_device": true,
             "product_id": 19767,
@@ -83,9 +80,7 @@
         {
           "disable_built_in_keyboard_if_exists": true,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
-            "is_pointing_device": false,
             "product_id": 19767,
             "vendor_id": 35176
           }
@@ -93,9 +88,7 @@
         {
           "disable_built_in_keyboard_if_exists": true,
           "identifiers": {
-            "is_game_pad": false,
             "is_keyboard": true,
-            "is_pointing_device": false,
             "product_id": 308,
             "vendor_id": 2131
           },
