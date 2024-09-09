@@ -1778,3 +1778,6 @@
   svn-m = merge --squash
   svn-c = svn dcommit
   svn-cp = !GIT_EDITOR='sed -i /^git-svn-id:/d' git cherry-pick --edit
+
+  rename = "!moveit() { git push origin --delete `git branch --show-current` || true; git branch -m $1; git push --set-upstream origin $1; }; moveit"
+
