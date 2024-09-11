@@ -1,5 +1,6 @@
 tap "1password/tap"
 tap "buo/cask-upgrade"
+tap "felixkratz/formulae"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/services"
@@ -63,10 +64,10 @@ brew "wget"
 brew "yarn"
 brew "yq"
 brew "zoxide"
+brew "felixkratz/formulae/borders"
 cask "1password"
 cask "1password-cli"
 cask "aerospace"
-cask "alt-tab"
 cask "appcleaner"
 cask "bartender"
 cask "betterdisplay"
@@ -81,12 +82,12 @@ cask "firefox@developer-edition"
 cask "font-input"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-monaspace"
-cask "github"
 cask "google-chrome"
 cask "istat-menus"
 cask "karabiner-elements"
 cask "keymapp"
 cask "maestral"
+cask "messenger"
 cask "mongodb-compass"
 cask "obsidian"
 cask "onyx"
@@ -94,7 +95,6 @@ cask "pgadmin4"
 cask "protonvpn"
 cask "raycast"
 cask "shottr"
-cask "tg-pro"
 cask "visual-studio-code"
 cask "vlc"
 cask "wezterm"
@@ -102,10 +102,10 @@ mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Hush", id: 1544743900
-mas "Messenger", id: 1480068668
 mas "Refined GitHub", id: 1519867270
 mas "Sink It for Reddit", id: 6449873635
 mas "Velja", id: 1607635845
+mas "Vimari", id: 1480933944
 mas "Xcode", id: 497799835
 vscode "1password.op-vscode"
 vscode "adpyke.codesnap"
