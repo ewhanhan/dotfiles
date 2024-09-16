@@ -49,29 +49,24 @@ config.window_padding = {
 }
 config.hide_tab_bar_if_only_one_tab = true
 
-config.leader = {
-	key = "w",
-	mods = "CTRL",
-	timeout_milliseconds = 1000,
-}
 config.keys = {
 	{
-		key = "|",
-		mods = "LEADER",
+		key = "\\",
+		mods = "CTRL",
 		action = act.SplitHorizontal({
 			domain = "CurrentPaneDomain",
 		}),
 	},
 	{
 		key = "-",
-		mods = "LEADER",
+		mods = "CTRL",
 		action = act.SplitVertical({
 			domain = "CurrentPaneDomain",
 		}),
 	},
 	{
 		key = "a",
-		mods = "LEADER|CTRL",
+		mods = "CTRL",
 		action = act.SendKey({
 			key = "a",
 			mods = "CTRL",
