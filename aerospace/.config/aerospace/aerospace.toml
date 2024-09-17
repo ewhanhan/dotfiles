@@ -137,5 +137,17 @@ run = "move-node-to-workspace T"
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace V"
 
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace B"
+
+[[on-window-detected]]
+if.app-id = 'com.mozilla.firefox'
+run = "move-node-to-workspace B"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = "move-node-to-workspace B"
+
 [workspace-to-monitor-force-assignment]
 A = "secondary"
