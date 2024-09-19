@@ -116,10 +116,3 @@ fi
 # zstyle modifications
 # ------------------
 
-
-export PNPM_HOME="$HOME/Library/pnpm"
-export YARN_HOME="$HOME/.yarn"
-export YARN_GLOBAL_CONFIG="$HOME/.config/yarn/global"
-
-# Combine paths to avoid multiple exports
-export PATH="$PNPM_HOME:$YARN_HOME/bin:$YARN_GLOBAL_CONFIG/node_modules/.bin:$PATH"
