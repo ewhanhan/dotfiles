@@ -137,4 +137,5 @@ config.keys = {
 	},
 }
 
+config.scrollback_lines = 100000
 return config
