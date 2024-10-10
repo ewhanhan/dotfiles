@@ -1,14 +1,19 @@
 [filter "lfs"]
 
 	clean = git-lfs clean -- %f
+
 	smudge = git-lfs smudge -- %f
+
 	process = git-lfs filter-process
+
 	required = true
 
 [user]
 
 	email = 40779221+ewhanhan@users.noreply.github.com
+  
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzxzOUH8tObX0Gr6lVNQ1dZo+ss3kY4HrrBmayfouNB
+
 	name = ewhanhan
 
 [gpg]
@@ -35,8 +40,10 @@
 
 [core]
 
+  pager = delta
 	# Use custom `.gitignore` and `.gitattributes`.
 	excludesfile = ~/.gitignore_global
+
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
@@ -60,6 +67,17 @@
 
 	ignorecase = false
 
+[interactive] 
+
+  diffFilter = delta --color-only
+
+[delta]
+
+  navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -85,6 +103,8 @@
 
 [diff]
 
+  colorMoved = default
+
   tool = default-difftool
 
 [difftool "default-difftool"]
@@ -92,9 +112,16 @@
   cmd = code --wait --diff $LOCAL $REMOTE
 
 [merge]
+
+  conflictstyle = diff3
+
   log = true
+
   tool = code
 
 [mergetool "code"]
 
   cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[difftool]
+	prompt = false
