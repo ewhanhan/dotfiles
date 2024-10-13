@@ -100,6 +100,7 @@ export HIVE_DEV_TUNNEL_ID=hive-ehan
 export TUNNEL_ID=hive-ehan
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
+export PATH="$HOME/.docker/bin:$PATH"
 
 # ------------------
 # pyenv
