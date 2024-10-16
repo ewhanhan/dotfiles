@@ -96,16 +96,9 @@ eval "$(starship init zsh)"
 # export
 # ------------------
 
-export HIVE_DEV_TUNNEL_ID=hive-ehan
-export TUNNEL_ID=hive-ehan
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
 export PATH="$HOME/.docker/bin:$PATH"
-
-# ------------------
-# pyenv
-# ------------------
-
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
