@@ -1,4 +1,4 @@
-                               " Basic Settings
+" Basic Settings
 set nocompatible               " Disable compatibility with vi which can cause unexpected issues.
 set encoding=utf-8             " Set file encoding to UTF-8.
 set ruler                      " Show the cursor position all the time.
@@ -41,6 +41,12 @@ set smartindent           " Enable smart indentation.
 set expandtab             " Use spaces instead of tabs.
 set formatoptions=tcqrn1  " Set format options for text formatting.
 
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Trigger a highlight only when pressing f and F.
+let g:qs_highlight_on_keys = ['f', 'F']
+
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -55,6 +61,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'ryanoasis/vim-devicons'  
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-commentary'
+Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -71,6 +79,12 @@ nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fh :History<CR>
 nnoremap <Leader>fl :Lines<CR>
 nnoremap <Leader>fm :Commands<CR>
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
