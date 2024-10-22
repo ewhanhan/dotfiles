@@ -40,6 +40,8 @@ set lazyredraw            " Redraw only when necessary to improve performance.
 set smartindent           " Enable smart indentation.
 set expandtab             " Use spaces instead of tabs.
 set formatoptions=tcqrn1  " Set format options for text formatting.
+set shiftwidth=4
+set tabstop=4
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -63,6 +65,13 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'unblevable/quick-scope'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
