@@ -34,6 +34,9 @@ unfocused_hollow                  = true
 [mouse]
 hide_when_typing                  = true
 
+[scrolling]
+history                           = 10000
+
 [keyboard]
 bindings                          = [
     # delete line command + backspace
