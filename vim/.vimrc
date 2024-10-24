@@ -88,12 +88,16 @@ nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fh :History<CR>
 nnoremap <Leader>fl :Lines<CR>
 nnoremap <Leader>fm :Commands<CR>
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Map 'jk' to 'Esc' in insert mode
+inoremap jk <Esc>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
