@@ -77,6 +77,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'machakann/vim-highlightedyank'
 Plug 'justinmk/vim-sneak'
 Plug 'bkad/CamelCaseMotion'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
