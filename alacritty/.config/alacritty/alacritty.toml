@@ -1,5 +1,3 @@
-import                            = ["~/.config/alacritty/themes/themes/gruvbox_material_medium_dark.toml"]
-live_config_reload                = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -61,3 +59,7 @@ hyperlinks                        = true
 post_processing                   = true
 regex                             = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
 mouse                             = { mods = "None", enabled = true }
+
+[general]
+live_config_reload                = true
+import                            = ["~/.config/alacritty/themes/themes/gruvbox_material_medium_dark.toml"]
