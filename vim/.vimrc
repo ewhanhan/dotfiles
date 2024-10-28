@@ -43,6 +43,9 @@ set formatoptions=tcqrn1  " Set format options for text formatting.
 set shiftwidth=4
 set tabstop=4
 
+" FZF homebrew
+set rtp+=/opt/homebrew/opt/fzf
+
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
