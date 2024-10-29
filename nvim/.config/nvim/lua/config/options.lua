@@ -7,7 +7,7 @@ end
 local opt = vim.opt
 local o = vim.o
 
-opt.swap = false
+opt.swapfile = false
 opt.incsearch = true
 
 o.incsearch = true -- starts searching as soon as typing, without enter needed
