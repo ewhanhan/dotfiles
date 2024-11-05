@@ -1,3 +1,8 @@
+add_newline = false
+
+[character]
+vimcmd_symbol = '[V](bold green) '
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
@@ -11,7 +16,7 @@ format = '\[[$symbol($version(-$name))]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [cmd_duration]
-format = '\[[⏱ $duration]($style)\]'
+disabled = true
 
 [cobol]
 format = '\[[$symbol($version)]($style)\]'
