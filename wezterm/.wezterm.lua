@@ -1,10 +1,23 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-
 local config = {}
+
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
+
+config.default_prog = {
+	"/bin/zsh",
+	"--login",
+	"-c",
+	[[
+	   if command -v tmux >/dev/null 2>&1; then
+	     tmux attach || tmux new;
+	   else
+	     exec zsh;
+	   fi
+	   ]],
+}
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font_with_fallback({
@@ -37,6 +50,7 @@ config.font_rules = {
 	},
 }
 
+config.max_fps = 120
 config.font_size = 14.0
 config.line_height = 1.15
 config.window_decorations = "RESIZE"
