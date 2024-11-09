@@ -146,3 +146,5 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+source ~/.config/op/plugins.sh
