@@ -28,6 +28,9 @@ alias grep='grep --color=auto'
 
 alias tmuxS="tmux attach || tmux new -s main"
 
+alias cat="bat"
+alias ping="prettyping"
+
 alias ...=../..
 alias ....=../../..
 alias .....=../../../..
