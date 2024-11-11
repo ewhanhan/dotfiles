@@ -29,6 +29,9 @@ default-root-container-orientation = 'auto'
 
 key-mapping.preset = 'qwerty'
 
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = 'move-mouse window-lazy-center'
+
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
@@ -111,7 +114,7 @@ alt-shift-ctrl-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-ctrl-semicolon = 'mode service'
 
-# 'service' binding mode declaration.
+# service binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
@@ -128,4 +131,4 @@ alt-shift-ctrl-k = ['join-with up', 'mode main']
 alt-shift-ctrl-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-1 = "secondary"
+1 = 'secondary'
