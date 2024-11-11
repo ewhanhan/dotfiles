@@ -18,17 +18,16 @@ require("lazy").setup({
   spec = {
     {
       "LazyVim/LazyVim",
-      import = "lazyvim.plugins"
+      import = "lazyvim.plugins",
     },
     -- import/override with your plugins
     { import = "plugins" },
-    { import = "lazyvim.plugins.extras.vscode" },
   },
   defaults = {
     lazy = false,
     version = false, -- always use the latest git commit
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "tokyonight", "habamax", "gruvbox", "catppuccin" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
