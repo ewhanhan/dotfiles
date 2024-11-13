@@ -85,15 +85,6 @@ unset key
 [ -f "$HOME/.zsh_keybindings" ] && source "$HOME/.zsh_keybindings"
 
 # ------------------
-# eval
-# ------------------
-
-eval "$(fnm env --use-on-cd)"
-eval "$(gh copilot alias -- zsh)"
-eval "$(starship init zsh)"
-eval "$(tmuxifier init -)"
-
-# ------------------
 # export
 # ------------------
 
@@ -118,6 +109,15 @@ fi
 if [[ ":$PATH:" != *":$HOME/.tmux/plugins/tmuxifier/bin:"*  ]]; then
   export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 fi
+
+# ------------------
+# eval
+# ------------------
+
+eval "$(fnm env --use-on-cd)"
+eval "$(gh copilot alias -- zsh)"
+eval "$(starship init zsh)"
+eval "$(tmuxifier init -)"
 
 # ------------------
 # zstyle modifications
