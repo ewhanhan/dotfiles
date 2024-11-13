@@ -91,6 +91,7 @@ unset key
 eval "$(fnm env --use-on-cd)"
 eval "$(gh copilot alias -- zsh)"
 eval "$(starship init zsh)"
+eval "$(tmuxifier init -)"
 
 # ------------------
 # export
@@ -98,7 +99,9 @@ eval "$(starship init zsh)"
 
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="$HOME/.docker/bin:$PATH"
+if [[ ":$PATH:" != *":$HOME/.docker/bin:"*  ]]; then
+    export PATH="$HOME/.docker/bin:$PATH"
+fi
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -111,6 +114,11 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m'
 fi
+
+if [[ ":$PATH:" != *":$HOME/.tmux/plugins/tmuxifier/bin:"*  ]]; then
+  export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+fi
+
 # ------------------
 # zstyle modifications
 # ------------------
