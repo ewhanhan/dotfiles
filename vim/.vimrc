@@ -78,8 +78,13 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'justinmk/vim-sneak'
 Plug 'bkad/CamelCaseMotion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'morhetz/gruvbox'
+Plug 'dense-analysis/ale'
 
 call plug#end()
+
+set background=dark
+colorscheme gruvbox"
 
 " -------------------------------------------------
 " KEY MAPPING
