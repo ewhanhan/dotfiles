@@ -24,6 +24,7 @@ outer.top = 10
 outer.right = 10
 
 [mode.main.binding]
+alt-enter = 'exec-and-forget open -a /Applications/WezTerm.app'
 cmd-h = []
 cmd-alt-h = []
 
