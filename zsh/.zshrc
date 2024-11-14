@@ -87,7 +87,7 @@ unset key
 # ------------------
 # export
 # ------------------
-
+export XDG_CONFIG_HOME="$HOME/.config"
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
 if [[ ":$PATH:" != *":$HOME/.docker/bin:"*  ]]; then
