@@ -58,8 +58,8 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
 	left = "24px",
 	right = "24px",
-	top = "0.5cell",
-	bottom = "0.5cell",
+	top = "12px",
+	bottom = "12px",
 }
 config.hide_tab_bar_if_only_one_tab = true
 
