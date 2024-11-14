@@ -1,30 +1,18 @@
-# Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  # JankyBorders has a built-in detection of already running process,
-  # so it won't be run twice on AeroSpace restart
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 hidpi=on',
 ]
 
 start-at-login = true
 
-# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-# See: https://nikitabobko.github.io/AeroSpace/guide#layouts
-# The 'accordion-padding' specifies the size of accordion padding
-# You can set 0 to disable the padding feature
 accordion-padding = 30
 
-# Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
 
-# Possible values: horizontal|vertical|auto
-# 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
-#               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
 key-mapping.preset = 'qwerty'
@@ -40,50 +28,27 @@ outer.bottom = 10
 outer.top = 10
 outer.right = 10
 
-# 'main' binding mode declaration
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-# 'main' binding mode must be always presented
 [mode.main.binding]
 
-cmd-h = []     # Disable "hide application"
-cmd-alt-h = [] # Disable "hide others"
+cmd-h = []
+cmd-alt-h = []
 
-# All possible keys:
-# - Letters.        a, b, c, ..., z
-# - Numbers.        0, 1, 2, ..., 9
-# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
-# - F-keys.         f1, f2, ..., f20
-# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
-#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
-# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
-#                   keypadMinus, keypadMultiply, keypadPlus
-# - Arrows.         left, down, up, right
-
-# All possible modifiers: cmd, alt, ctrl, shift
-# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
-
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-ctrl-shift-slash = 'layout tiles horizontal vertical'
 alt-ctrl-shift-comma = 'layout accordion horizontal vertical'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
 cmd-alt-ctrl-shift-h = 'focus left'
 cmd-alt-ctrl-shift-j = 'focus down'
 cmd-alt-ctrl-shift-k = 'focus up'
 cmd-alt-ctrl-shift-l = 'focus right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-ctrl-h = 'move left'
 alt-shift-ctrl-j = 'move down'
 alt-shift-ctrl-k = 'move up'
 alt-shift-ctrl-l = 'move right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-ctrl-minus = 'resize smart -50'
 alt-shift-ctrl-equal = 'resize smart +50'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 cmd-alt-ctrl-shift-1 = 'workspace 1'
 cmd-alt-ctrl-shift-2 = 'workspace 2'
 cmd-alt-ctrl-shift-3 = 'workspace 3'
@@ -94,7 +59,6 @@ cmd-alt-ctrl-shift-7 = 'workspace 7'
 cmd-alt-ctrl-shift-8 = 'workspace 8'
 cmd-alt-ctrl-shift-9 = 'workspace 9'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-ctrl-1 = 'move-node-to-workspace 1'
 alt-shift-ctrl-2 = 'move-node-to-workspace 2'
 alt-shift-ctrl-3 = 'move-node-to-workspace 3'
@@ -106,23 +70,15 @@ alt-shift-ctrl-8 = 'move-node-to-workspace 8'
 alt-shift-ctrl-9 = 'move-node-to-workspace 9'
 alt-shift-ctrl-f = 'fullscreen'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 cmd-alt-ctrl-shift-tab = 'workspace-back-and-forth'
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-ctrl-tab = 'move-workspace-to-monitor --wrap-around next'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-ctrl-semicolon = 'mode service'
 
-# service binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-ctrl-h = ['join-with left', 'mode main']
