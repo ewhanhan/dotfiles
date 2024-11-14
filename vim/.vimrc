@@ -80,6 +80,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -100,6 +101,9 @@ nnoremap <Leader>fh :History<CR>
 nnoremap <Leader>fl :Lines<CR>
 nnoremap <Leader>fm :Commands<CR>
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+nnoremap <leader>fa :NERDTreeToggle<CR>
+nnoremap <leader>ff :NERDTreeFind<CR>
+nnoremap <leader>fn :NERDTreeFocus<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
