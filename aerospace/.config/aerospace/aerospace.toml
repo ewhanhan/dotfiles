@@ -1,7 +1,7 @@
 start-at-login = true
 after-login-command = []
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 hidpi=on',
+  'exec-and-forget borders style=round width=6.0 hidpi=on active_color=0xc0e2e2e3 inactive_color=0xc02c2e34 background_color=0x302c2e34',
 ]
 
 enable-normalization-flatten-containers = true
