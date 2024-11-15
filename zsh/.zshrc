@@ -109,29 +109,18 @@ unset key
 # ------------------
 # Source
 # ------------------
-
 [ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
 [ -f "$HOME/.zsh_keybindings" ] && source "$HOME/.zsh_keybindings"
+[ -f "~/.config/op/plugins.sh" ] && source ~/.config/op/plugins.sh
 
 # ------------------
 # export
 # ------------------
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
+
 if [[ ":$PATH:" != *":$HOME/.docker/bin:"*  ]]; then
     export PATH="$HOME/.docker/bin:$PATH"
-fi
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-if which pyenv-virtualenv-init >/dev/null; then
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS='-m'
 fi
 
 if [[ ":$PATH:" != *":$HOME/.tmux/plugins/tmuxifier/bin:"*  ]]; then
@@ -146,6 +135,22 @@ eval "$(starship init zsh)"
 eval "$(tmuxifier init -)"
 
 # ------------------
-# source
+# Lazy loading pyenv
 # ------------------
-source ~/.config/op/plugins.sh
+export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
+if ! type pyenv > /dev/null && [ -f "${PYENV_ROOT}/bin/pyenv" ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+fi
+
+if type pyenv > /dev/null; then
+    export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init -)"
+        if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
+            eval "$(command pyenv virtualenv-init -)"
+        fi
+        pyenv $@
+    }
+fi
+
