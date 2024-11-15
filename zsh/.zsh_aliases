@@ -1,6 +1,4 @@
 alias EDITOR="code --wait"
-alias zshconfig="code ~/.zshrc"
-alias zshconfig="code ~/.zshrc"
 alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
 alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
 alias cacheD="rm -rf ~/Library/Caches/*;"
@@ -10,25 +8,18 @@ alias s="exec zsh"
 alias npmG="npm list -g --depth=0"
 alias python="python3"
 alias macU="softwareupdate -i -a --no-scan --agree-to-license"
-alias zimU="zimfw install; zimfw uninstall; zimfw update; zimfw upgrade"
+alias zimU="zimfw install -v; zimfw uninstall -v; zimfw update -v; zimfw upgrade -v"
 alias d="docker"
 alias dc="docker-compose"
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
-alias uuu="brewup; npmU; zimU; mas upgrade; macU"
+alias uuu="brewup; npmU; zimU; mas upgrade; macU; exec zsh"
 alias N="npm run"
 alias buz="brew uninstall --zap"
-
-
 alias l="eza -G --icons -T --level=1 --show-symlinks -a --group-directories-first"
 alias ls="l"
 alias ll="l -lF"
 alias lsa="l -lF"
-
-alias bat='bat --color=always'
-alias grep='grep --color=auto'
-
 alias tmuxS="tmux attach || tmux new -s main"
-
 alias cat="bat"
 alias ping="prettyping"
 
@@ -54,9 +45,9 @@ alias ncu-minor="npx npm-check-updates -i --target minor"
 
 ############################ Work #############################
 
-alias hRestart="hStop; hStart"
 alias hStop="hcli dev stop"
 alias hStart="hcli dev start"
+alias hRestart="hStop; hStart"
 alias hCleanStart="hStop; git cleanest; npm i; hStart"
 
 npmU() {
