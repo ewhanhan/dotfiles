@@ -57,4 +57,5 @@ bindings = [
   { key = "W", mods = "Command", action = "Quit" },
   { key = "Q", mods = "Command", action = "Quit" },
   { key = "H", mods = "Command", action = "Hide" },
+  { key = "T", mods = "Command", chars = "\u0001c" },
 ]

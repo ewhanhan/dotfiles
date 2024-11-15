@@ -149,6 +149,19 @@ config.keys = {
 			key = "e",
 		}),
 	},
+	{
+		key = "t",
+		mods = "CMD",
+		action = wezterm.action.Multiple({
+			wezterm.action.SendKey({
+				key = "a",
+				mods = "CTRL",
+			}),
+			wezterm.action.SendKey({
+				key = "c",
+			}),
+		}),
+	},
 }
 
 config.scrollback_lines = 100000
