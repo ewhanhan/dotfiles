@@ -52,6 +52,9 @@
 
 [delta]
     navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers = true
+    features = gruvmax-fang
 
 [color]
     # Use colors in Git commands that are capable of colored output when
@@ -79,7 +82,7 @@
     cmd = code --wait --diff $LOCAL $REMOTE
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
     log = true
     tool = code
 
