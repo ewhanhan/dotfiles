@@ -5,6 +5,7 @@ let mapleader=' '
 
 " FZF 
 nnoremap <C-F>      :Files<CR>
+nnoremap <Leader><Leader> :Files<CR>
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fc :Colors<CR>
@@ -12,11 +13,14 @@ nnoremap <Leader>fh :History<CR>
 nnoremap <Leader>fl :Lines<CR>
 nnoremap <Leader>fm :Commands<CR>
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-nnoremap <leader>fa :NERDTreeToggle<CR>
-nnoremap <leader>ff :NERDTreeFind<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>fe :NERDTreeToggle<CR>
+nnoremap <leader>fF :NERDTreeFind<CR>
 nnoremap <leader>fn :NERDTreeFocus<CR>
 
 nnoremap <leader>qq :qa<CR>
+nnoremap <leader>ww :w<CR>
+nnoremap <leader>W :wa<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>

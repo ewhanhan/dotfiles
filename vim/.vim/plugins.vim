@@ -46,3 +46,10 @@ let g:qs_highlight_on_keys = ['f', 'F']
 
 " Sneak Plugin Settings
 let g:sneak#label = 1
+
+let NERDTreeShowHidden=1
+let NERDTreeHighlightCursorline=1
+let NERDTreeIgnore=['\.swp$', '\.DS_Store']
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
