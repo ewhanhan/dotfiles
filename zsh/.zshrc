@@ -141,9 +141,7 @@ fi
 # ------------------
 # eval
 # ------------------
-
-eval "$(fnm env --use-on-cd)"
-eval "$(gh copilot alias -- zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"
 eval "$(tmuxifier init -)"
 
