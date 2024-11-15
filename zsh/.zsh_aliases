@@ -1,6 +1,5 @@
 alias EDITOR="code --wait"
 alias zshconfig="code ~/.zshrc"
-alias l="eza -lah --icons"
 alias zshconfig="code ~/.zshrc"
 alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
 alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
@@ -19,9 +18,11 @@ alias uuu="brewup; npmU; zimU; mas upgrade; macU"
 alias N="npm run"
 alias buz="brew uninstall --zap"
 
-alias ll='ls -alF'
-alias ls="eza --icons -F -H --group-directories-first --git -1"
-alias lsa="ls -alF"
+
+alias l="eza -G --icons -T --level=1 --show-symlinks -a --group-directories-first"
+alias ls="l"
+alias ll="l -lF"
+alias lsa="l -lF"
 
 alias bat='bat --color=always'
 alias grep='grep --color=auto'
