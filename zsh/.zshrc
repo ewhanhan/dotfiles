@@ -151,5 +151,3 @@ eval "$(tmuxifier init -)"
 # source
 # ------------------
 source ~/.config/op/plugins.sh
-
-zprof
