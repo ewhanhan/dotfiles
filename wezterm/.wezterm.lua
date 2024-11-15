@@ -30,12 +30,12 @@ config.font = wezterm.font_with_fallback({
 config.font_rules = {
 	{
 		intensity = "Normal",
-		italic = true,
 		font = wezterm.font_with_fallback({
 			{
-				family = "JetBrains Mono",
+				family = "JetBrainsMono Nerd Font",
 				style = "Normal",
 			},
+			{ family = "Symbols Nerd Font Mono", scale = 0.75 },
 		}),
 	},
 	{
