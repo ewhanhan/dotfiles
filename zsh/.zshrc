@@ -35,6 +35,8 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # zsh-syntax-highlighting
 #
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
 # ------------------
 # zstyle modifications
 # ------------------
@@ -51,7 +53,8 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
-zstyle ':completion::complete:*' cache-path ~/.cache/zsh/zcompcache
+zstyle ':zim:completion' dumpfile "${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump"
+zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-${HOME}}/.cache/zsh/zcompcache"
 zstyle ':completion:*' use-cache on
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
@@ -64,8 +67,6 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-#ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
 # ------------------
 # Initialize modules
