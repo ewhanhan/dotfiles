@@ -119,6 +119,7 @@ unset key
 # ------------------
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
+export CONFIG_DIR="$HOME/.config/lazygit"
 
 if [[ ":$PATH:" != *":$HOME/.docker/bin:"*  ]]; then
     export PATH="$HOME/.docker/bin:$PATH"
