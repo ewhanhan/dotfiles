@@ -20,26 +20,25 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
     },
-    -- import/override with your plugins
+    -- ++++++++++++++++++++++++++++++++++++++++++++
+    -- ++++++++++ override plugins ++++++++++++++++
+    -- ++++++++++++++++++++++++++++++++++++++++++++
+    { import = "lazyvim.plugins.extras.vscode" },
     { import = "plugins" },
   },
   defaults = {
     lazy = false,
-    version = false, -- always use the latest git commit
+    version = false,
   },
-  install = { colorscheme = { "tokyonight", "habamax", "gruvbox", "catppuccin" } },
+  install = { colorscheme = { "tokyonight", "gruvbox", "catppuccin" } },
   checker = {
-    enabled = true, -- check for plugin updates periodically
-    notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+    enabled = true,
+    notify = false,
+  },
   performance = {
     rtp = {
-      -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
