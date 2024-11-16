@@ -56,6 +56,7 @@ zstyle ':completion:*' menu no
 zstyle ':zim:completion' dumpfile "${ZDOTDIR:-${HOME}}/.cache/zsh/.zcompdump"
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-${HOME}}/.cache/zsh/zcompcache"
 zstyle ':completion:*' use-cache on
+zstyle ':fzf-tab:*' popup-min-size 80 12
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # custom fzf flags
