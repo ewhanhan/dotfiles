@@ -1,28 +1,30 @@
 alias EDITOR="code --wait"
-alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
-alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
-alias cacheD="rm -rf ~/Library/Caches/*;"
-alias cacheS="du -sh ~/Library/Caches"
 alias c="clear"
 alias s="exec zsh"
 alias npmG="npm list -g --depth=0"
 alias python="python3"
-alias macU="softwareupdate -i -a --no-scan --agree-to-license"
 alias zimU="zimfw install -v; zimfw uninstall -v; zimfw update -v; zimfw upgrade -v"
 alias d="docker"
 alias docker-compose="docker compose --compatability $@"
 alias dc="docker-compose"
-alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
-alias uuu="brewup; npmU; zimU; mas upgrade; macU; exec zsh"
 alias N="npm run"
-alias buz="brew uninstall --zap"
+
 alias l="eza -1 --icons --show-symlinks -a --group-directories-first"
 alias ls="l"
 alias ll="l -lF"
 alias lsa="l -lF"
-alias tmuxS="tmux attach || tmux new -s main"
+
 alias cat="bat"
 alias ping="prettyping"
+
+alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
+alias macU="softwareupdate -i -a --no-scan --agree-to-license"
+alias uuu="brewup; npmU; zimU; mas upgrade; macU; exec zsh"
+alias buz="brew uninstall --zap"
+alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
+alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
+alias cacheD="rm -rf ~/Library/Caches/*;"
+alias cacheS="du -sh ~/Library/Caches"
 
 alias ...=../..
 alias ....=../../..
@@ -286,3 +288,8 @@ alias ${gprefix}yd='git switch --detach'
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'
 alias ${gprefix}\?="git-alias-lookup ${gmodule_home}"
+
+# TPM / tmux
+alias tpmI='~/.tmux/plugins/tpm/bin/install_plugins'
+alias tpmC='~/.tmux/plugins/tpm/bin/clean_plugins'
+alias tpmU='~/.tmux/plugins/tpm/bin/update_plugins all'
