@@ -1,9 +1,1 @@
-function _tmuxS {
-    zle .kill-whole-line
-    zle -U "tmuxS
-$CUTBUFFER"
-}
-
-zle -N _tmuxS
-bindkey '^a' _tmuxS
 
