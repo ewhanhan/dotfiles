@@ -1,3 +1,6 @@
+alias vim="nvim"
+alias vi="nvim"
+alias nvimU='nvim --headless "+Lazy! sync" +qa'
 alias EDITOR="code --wait"
 alias c="clear"
 alias s="exec zsh"
@@ -19,7 +22,7 @@ alias ping="prettyping"
 
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
 alias macU="softwareupdate -i -a --no-scan --agree-to-license"
-alias uuu="brewup; npmU; zimU; mas upgrade; macU; exec zsh"
+alias uuu="brewup; npmU; zimU; mas upgrade; nvimU; macU; exec zsh"
 alias buz="brew uninstall --zap"
 alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
 alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
