@@ -82,5 +82,5 @@ alt-shift-ctrl-k = ['join-with up', 'mode main']
 alt-shift-ctrl-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-'main' = 'main'
+'main' = ['Studio Display', '^built-in retina display$']
 'secondary' = 'secondary'
