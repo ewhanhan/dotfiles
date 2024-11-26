@@ -348,8 +348,6 @@ alias npmrd="npm run dev"
 # Run npm run build
 alias npmrb="npm run build"
 
-alias python="python3"
-
 builtin which py > /dev/null || alias py='python3'
 
 # Find python file
@@ -447,30 +445,16 @@ if [[ "$PYTHON_AUTO_VRUN" == "true" ]]; then
   auto_vrun
 fi
 
-# Grep among .py files
+alias python="python3"
 alias pygrep='grep -nr --include="*.py"'
-
-# Share local directory as a HTTP server
 alias pyserver="python3 -m http.server"
-
-if (( $+commands[pip3] && !$+commands[pip] )); then
-  alias pip="noglob pip3"
-else
-  alias pip="noglob pip"
-fi
-
-alias pipi="pip install"
-alias pipu="pip install --upgrade"
-alias pipup="pip install --upgrade $(pip list --outdated | awk 'NR>2 {print $1}')"
-alias pipun="pip uninstall"
-alias pipgi="pip freeze | grep"
-alias piplo="pip list -o"
-
-# Create requirements file
-alias pipreq="pip freeze > requirements.txt"
-
-# Install packages from requirements file
-alias pipir="pip install -r requirements.txt"
+alias pipi="pip3 install"
+alias pipu="pip3 install --upgrade"
+alias pipun="pip3 uninstall"
+alias pipgi="pip3 freeze | grep"
+alias piplo="pip3 list -o"
+alias pipreq="pip3 freeze > requirements.txt"
+alias pipir="pip3 install -r requirements.txt"
 
 alias rsync-copy="rsync -avz --progress -h"
 alias rsync-move="rsync -avz --progress -h --remove-source-files"
