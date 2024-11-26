@@ -6,9 +6,9 @@
     // - "light": Use the theme indicated by the "light" field
     // - "dark": Use the theme indicated by the "dark" field
     "theme": {
-        "mode": "system",
+        "mode": "dark",
         "light": "Gruvbox Dark",
-        "dark": "One Dark"
+        "dark": "Gruvbox Dark"
     },
     // The name of a base set of key bindings to use.
     // This setting can take four values, each named after another
@@ -27,17 +27,19 @@
         "inline_completion_provider": "copilot"
     },
     // The name of a font to use for rendering text in the editor
-    "buffer_font_family": "Zed Plex Mono",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
     // Set the buffer text's font fallbacks, this will be merged with
     // the platform's default fallbacks.
-    "buffer_font_fallbacks": null,
+    "buffer_font_fallbacks": [
+        "Zed Plex Sans"
+    ],
     // The OpenType features to enable for text in the editor.
     "buffer_font_features": {
         // Disable ligatures:
         // "calt": false
     },
     // The default font size for text in the editor
-    "buffer_font_size": 15,
+    "buffer_font_size": 13,
     // The weight of the editor font in standard CSS units from 100 to 900.
     "buffer_font_weight": 400,
     // Set the buffer's line height.
@@ -56,7 +58,9 @@
     "ui_font_family": "Zed Plex Sans",
     // Set the UI's font fallbacks, this will be merged with the platform's
     // default font fallbacks.
-    "ui_font_fallbacks": null,
+    "ui_font_fallbacks": [
+        "Zed Plex Sans"
+    ],
     // The OpenType features to enable for text in the UI
     "ui_font_features": {
         // Disable ligatures:
@@ -65,7 +69,7 @@
     // The weight of the UI font in standard CSS units from 100 to 900.
     "ui_font_weight": 400,
     // The default font size for text in the UI
-    "ui_font_size": 16,
+    "ui_font_size": 14,
     // How much to fade out unused code.
     "unnecessary_code_fade": 0.3,
     // Active pane styling settings.
@@ -222,16 +226,16 @@
     // Settings related to calls in Zed
     "calls": {
         // Join calls with the microphone live by default
-        "mute_on_join": false,
+        "mute_on_join": true,
         // Share your project when you are the first to join a channel
-        "share_on_join": false
+        "share_on_join": true
     },
     // Toolbar related settings
     "toolbar": {
         // Whether to show breadcrumbs.
         "breadcrumbs": true,
         // Whether to show quick action buttons.
-        "quick_actions": true,
+        "quick_actions": false,
         // Whether to show the Selections menu in the editor toolbar
         "selections_menu": true
     },
@@ -310,7 +314,7 @@
     // Scroll sensitivity multiplier. This multiplier is applied
     // to both the horizontal and vertical delta values while scrolling.
     "scroll_sensitivity": 1.0,
-    "relative_line_numbers": false,
+    "relative_line_numbers": true,
     // If 'search_wrap' is disabled, search result do not wrap around the end of the file.
     "search_wrap": true,
     // Search options to enable by default when opening new project and buffer searches.
@@ -330,7 +334,7 @@
     // 3. Never populate the search query
     //    "never"
     "seed_search_query_from_cursor": "always",
-    "use_smartcase_search": false,
+    "use_smartcase_search": true,
     // Inlay hint related settings
     "inlay_hints": {
         // Global switch to toggle hints on and off, switched off by default.
@@ -465,7 +469,7 @@
     },
     "collaboration_panel": {
         // Whether to show the collaboration panel button in the status bar.
-        "button": true,
+        "button": false,
         // Where to dock the collaboration panel. Can be 'left' or 'right'.
         "dock": "left",
         // Default width of the collaboration panel.
@@ -473,7 +477,7 @@
     },
     "chat_panel": {
         // Whether to show the chat panel button in the status bar.
-        "button": true,
+        "button": false,
         // Where to the chat panel. Can be 'left' or 'right'.
         "dock": "right",
         // Default width of the chat panel.
@@ -508,9 +512,9 @@
         // The default model to use when creating new chats.
         "default_model": {
             // The provider to use.
-            "provider": "zed.dev",
+            "provider": "copilot_chat",
             // The model to use.
-            "model": "claude-3-5-sonnet"
+            "model": "gpt-4o"
         }
     },
     // The settings for slash commands.
@@ -640,7 +644,7 @@
     // spaces.
     "hard_tabs": false,
     // How many columns a tab should occupy.
-    "tab_size": 4,
+    "tab_size": 2,
     // Control what info is collected by Zed.
     "telemetry": {
         // Send debug info like crash reports.
@@ -797,7 +801,7 @@
         "option_as_meta": false,
         // Whether or not selecting text in the terminal will automatically
         // copy to the system clipboard.
-        "copy_on_select": false,
+        "copy_on_select": true,
         // Whether to show the terminal button in the status bar
         "button": true,
         // Any key-value pairs added to this list will be added to the terminal's
@@ -816,7 +820,7 @@
         //         "line_height": {
         //           "custom": 2
         //         },
-        "line_height": "comfortable",
+        "line_height": "standard",
         // Activate the python virtual environment, if one is found, in the
         // terminal's working directory (as resolved by the working_directory
         // setting). Set this to "off" to disable this behavior.
@@ -838,17 +842,19 @@
         "toolbar": {
             // Whether to display the terminal title in its toolbar.
             "title": true
-        }
+        },
         // Set the terminal's font size. If this option is not included,
         // the terminal will default to matching the buffer's font size.
-        // "font_size": 15,
+        // "font_size": 13,
         // Set the terminal's font family. If this option is not included,
         // the terminal will default to matching the buffer's font family.
-        // "font_family": "Zed Plex Mono",
+        "font_family": "JetBrainsMono Nerd Font",
         // Set the terminal's font fallbacks. If this option is not included,
         // the terminal will default to matching the buffer's font fallbacks.
         // This will be merged with the platform's default font fallbacks
-        // "font_fallbacks": ["FiraCode Nerd Fonts"],
+        "font_fallbacks": [
+            "Zed Plex Mono"
+        ]
         // Sets the maximum number of lines in the terminal's scrollback buffer.
         // Default: 10_000, maximum: 100_000 (all bigger values set will be treated as 100_000), 0 disables the scrolling.
         // Existing terminals will not pick up this change until they are recreated.
