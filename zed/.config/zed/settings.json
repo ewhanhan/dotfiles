@@ -239,7 +239,7 @@
     // Whether to show quick action buttons.
     "quick_actions": false,
     // Whether to show the Selections menu in the editor toolbar
-    "selections_menu": true
+    "selections_menu": false
   },
   // Scrollbar related settings
   "scrollbar": {
@@ -359,7 +359,7 @@
   },
   "project_panel": {
     // Whether to show the project panel button in the status bar
-    "button": true,
+    "button": false,
     // Default width of the project panel.
     "default_width": 240,
     // Where to dock the project panel. Can be 'left' or 'right'.
@@ -420,7 +420,7 @@
   },
   "outline_panel": {
     // Whether to show the outline panel button in the status bar
-    "button": true,
+    "button": false,
     // Default width of the outline panel.
     "default_width": 300,
     // Where to dock the outline panel. Can be 'left' or 'right'.
@@ -492,7 +492,7 @@
   },
   "notification_panel": {
     // Whether to show the notification panel button in the status bar.
-    "button": true,
+    "button": false,
     // Where to dock the notification panel. Can be 'left' or 'right'.
     "dock": "right",
     // Default width of the notification panel.
@@ -541,10 +541,6 @@
   "linked_edits": true,
   // The list of language servers to use (or disable) for all languages.
   //
-  // This is typically customized on a per-language basis.
-  "language_servers": [
-    "..."
-  ],
   // When to automatically save edited buffers. This setting can
   // take four values.
   //
@@ -556,22 +552,22 @@
   //     "autosave": "on_focus_change",
   // 4. Save when idle for a certain amount of time:
   //     "autosave": { "after_delay": {"milliseconds": 500} },
-  "autosave": "off",
+  "autosave": "on_window_change",
   // Settings related to the editor's tab bar.
   "tab_bar": {
     // Whether or not to show the tab bar in the editor
     "show": true,
     // Whether or not to show the navigation history buttons.
-    "show_nav_history_buttons": true
+    "show_nav_history_buttons": false
   },
   // Settings related to the editor's tabs
   "tabs": {
     // Show git status colors in the editor tabs.
-    "git_status": false,
+    "git_status": true,
     // Position of the close button on the editor tabs.
     "close_position": "right",
     // Whether to show the file icon for a tab.
-    "file_icons": false,
+    "file_icons": true,
     // What to do after closing the current tab.
     //
     // 1. Activate the tab that was open previously (default)
@@ -805,7 +801,7 @@
     // copy to the system clipboard.
     "copy_on_select": true,
     // Whether to show the terminal button in the status bar
-    "button": true,
+    "button": false,
     // Any key-value pairs added to this list will be added to the terminal's
     // environment. Use `:` to separate multiple values.
     "env": {
@@ -850,11 +846,12 @@
     // "font_size": 13,
     // Set the terminal's font family. If this option is not included,
     // the terminal will default to matching the buffer's font family.
-    "font_family": "JetBrainsMono Nerd Font",
+    "font_family": "Hasklug Nerd Font Mono",
     // Set the terminal's font fallbacks. If this option is not included,
     // the terminal will default to matching the buffer's font fallbacks.
     // This will be merged with the platform's default font fallbacks
     "font_fallbacks": [
+      "JetBrainsMono Nerd Font",
       "Zed Plex Mono"
     ]
     // Sets the maximum number of lines in the terminal's scrollback buffer.
@@ -917,7 +914,13 @@
   // If you don't want any of these extensions, add this field to your settings
   // and change the value to `false`.
   "auto_install_extensions": {
-    "html": true
+    "html": true,
+    "docker-compose": true,
+    "env": true,
+    "make": true,
+    "markdown-oxide": true,
+    "ini": true,
+    "xml": true
   },
   //Zed's Prettier integration settings.
   // Allows to enable/disable formatting with Prettier
