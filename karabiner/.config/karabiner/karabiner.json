@@ -780,7 +780,7 @@
     "profiles": [
         {
             "complex_modifications": {
-                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 200 },
+                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 150 },
                 "rules": [
                     {
                         "description": "Map FN to Meh when held",
@@ -1706,6 +1706,21 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 33,
+                        "vendor_id": 1278
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        }
+                    ]
+                }
+            ],
             "name": "Homerow Mods",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         },
