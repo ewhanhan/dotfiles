@@ -93,7 +93,6 @@ cask "whatsapp"
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
-mas "iMovie", id: 408981434
 mas "Refined GitHub", id: 1519867270
 mas "Rules", id: 6461118886
 mas "Sink It for Reddit", id: 6449873635
@@ -103,13 +102,13 @@ mas "Vimari", id: 1480933944
 mas "Wipr", id: 1662217862
 mas "Xcode", id: 497799835
 vscode "alefragnani.project-manager"
+vscode "amodio.tsl-problem-matcher"
 vscode "antfu.file-nesting"
 vscode "bradlc.vscode-tailwindcss"
 vscode "chakrounanas.turbo-console-log"
 vscode "charliermarsh.ruff"
 vscode "dbaeumer.vscode-eslint"
 vscode "docker.docker-vscode-extension"
-vscode "docker.labs-ai-tools-vscode"
 vscode "donjayamanne.githistory"
 vscode "donjayamanne.python-environment-manager"
 vscode "dotenv.dotenv-vscode"
@@ -122,7 +121,6 @@ vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "ibm.output-colorizer"
 vscode "jdinhlife.gruvbox"
-vscode "jock.svg"
 vscode "jonathanharty.gruvbox-material-icon-theme"
 vscode "kisstkondoros.vscode-codemetrics"
 vscode "mechatroner.rainbow-csv"
