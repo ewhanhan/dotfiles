@@ -780,7 +780,7 @@
     "profiles": [
         {
             "complex_modifications": {
-                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 150 },
+                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 125 },
                 "rules": [
                     {
                         "description": "Map FN to Meh when held",
@@ -1748,7 +1748,6 @@
                     },
                     {
                         "description": "Left ctrl + hjkl to arrow keys Vim",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -2663,6 +2662,7 @@
                     }
                 },
                 {
+                    "disable_built_in_keyboard_if_exists": true,
                     "identifiers": {
                         "is_keyboard": true,
                         "product_id": 33,
@@ -2670,10 +2670,18 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "application" },
+                            "from": { "key_code": "right_option" },
                             "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 308,
+                        "vendor_id": 2131
+                    }
                 }
             ],
             "name": "Default",
