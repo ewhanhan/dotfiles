@@ -8,7 +8,7 @@ enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 default-root-container-layout = 'tiles'
-default-root-container-orientation = 'auto'
+default-root-container-orientation = 'horizontal'
 
 key-mapping.preset = 'qwerty'
 
@@ -82,5 +82,23 @@ alt-shift-ctrl-k = ['join-with up', 'mode main']
 alt-shift-ctrl-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-'main' = ['Studio Display', '^built-in retina display$']
-'secondary' = 'secondary'
+main = ['Studio Display', '^built-in retina display$']
+secondary = 'secondary'
+
+# https://nikitabobko.github.io/AeroSpace/goodies#popular-apps-ids
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = 'move-node-to-workspace secondary'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace secondary'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace secondary'
+
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace secondary'
