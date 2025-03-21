@@ -1,5 +1,6 @@
 {
     "description": "Home row mods - ctrl, opt, cmd, shift",
+    "global": { "show_in_menu_bar": false },
     "manipulators": [
         {
             "from": {
