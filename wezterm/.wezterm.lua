@@ -81,6 +81,14 @@ config.keys = {
 		}),
 	},
 	{
+		key = "n",
+		mods = "CMD",
+		action = wezterm.action.Multiple({
+			wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
+			wezterm.action.SendKey({ key = "c" }),
+		}),
+	},
+	{
 		key = "w",
 		mods = "CMD",
 		action = wezterm.action.Multiple({
