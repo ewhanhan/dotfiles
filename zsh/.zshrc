@@ -121,20 +121,13 @@ unset key
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
 export CONFIG_DIR="$HOME/.config/lazygit"
-
-if [[ ":$PATH:" != *":$HOME/.docker/bin:"*  ]]; then
-    export PATH="$HOME/.docker/bin:$PATH"
-fi
-
-if [[ ":$PATH:" != *":$HOME/.tmux/plugins/tmuxifier/bin:"*  ]]; then
-  export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
-fi
+export PATH="$HOME/.docker/bin:$PATH"
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 
 # ------------------
 # eval
 # ------------------
 eval "$(fnm env --use-on-cd --shell zsh)"
-eval "$(starship init zsh)"
 eval "$(tmuxifier init -)"
 
 # ------------------
@@ -146,7 +139,9 @@ if ! type pyenv > /dev/null && [ -f "${PYENV_ROOT}/bin/pyenv" ]; then
 fi
 
 if type pyenv > /dev/null; then
-    export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
+    [[ ":$PATH:" != *":${PYENV_ROOT}/bin:"* ]] && export PATH="${PYENV_ROOT}/bin:$PATH"
+    [[ ":$PATH:" != *":${PYENV_ROOT}/shims:"* ]] && export PATH="${PYENV_ROOT}/shims:$PATH"
+
     function pyenv() {
         unset -f pyenv
         eval "$(command pyenv init -)"
@@ -157,3 +152,8 @@ if type pyenv > /dev/null; then
     }
 fi
 
+
+# Created by `pipx` on 2025-04-05 16:45:07
+export PATH="$PATH:$HOME/.local/bin"
+
+eval "$(starship init zsh)"
