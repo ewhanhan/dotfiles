@@ -123,13 +123,7 @@ export HOMEBREW_NO_ANALYTICS=1
 export CONFIG_DIR="$HOME/.config/lazygit"
 export PATH="$HOME/.docker/bin:$PATH"
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
-
-# ------------------
-# eval
-# ------------------
-eval "$(fnm env --use-on-cd --shell zsh)"
-eval "$(tmuxifier init -)"
-
+export PATH="$HOME/.local/bin:$PATH"
 # ------------------
 # Lazy loading pyenv
 # ------------------
@@ -152,8 +146,11 @@ if type pyenv > /dev/null; then
     }
 fi
 
+# ------------------
+# eval
+# ------------------
+eval "$(tmuxifier init -)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
-# Created by `pipx` on 2025-04-05 16:45:07
-export PATH="$PATH:$HOME/.local/bin"
-
+typeset -U path PATH
 eval "$(starship init zsh)"
