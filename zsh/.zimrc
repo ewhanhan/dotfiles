@@ -8,19 +8,29 @@ zmodule termtitle
 zmodule utility
 zmodule homebrew
 zmodule fzf
-
-zmodule zsh-users/zsh-completions --fpath src
-zmodule completion
+zmodule ruby
+zmodule ssh
+zmodule archive
 
 zmodule Aloxaf/fzf-tab
 zmodule kiesman99/zim-zoxide
 zmodule joke/zim-github-cli
 zmodule hlissner/zsh-autopair
 zmodule joke/zim-yq
+zmodule joke/zim-starship	
+
+#
+# Completion
+#
+
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
 
 #
 # Modules that must be initialized last
 #
+
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
