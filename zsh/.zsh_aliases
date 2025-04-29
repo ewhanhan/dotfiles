@@ -17,7 +17,6 @@ alias ls="l"
 alias ll="l -lF"
 alias lsa="l -lF"
 
-alias cat="bat"
 alias ping="prettyping"
 
 alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
