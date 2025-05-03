@@ -75,15 +75,12 @@
     path = ~/.gitalias.txt
 
 [diff]
-    colorMoved = default
     tool = default-difftool
 
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
 
 [merge]
-    conflictstyle = zdiff3
-    log = true
     tool = code
 
 [mergetool "code"]
@@ -93,4 +90,7 @@
     prompt = false
 
 [credential]
-    helper = store
+  helper = store
+
+[sequence]
+    editor = code --wait
