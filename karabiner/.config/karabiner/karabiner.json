@@ -2661,7 +2661,8 @@
                         "is_keyboard": true,
                         "product_id": 6519,
                         "vendor_id": 12951
-                    }
+                    },
+                    "manipulate_caps_lock_led": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": true,
