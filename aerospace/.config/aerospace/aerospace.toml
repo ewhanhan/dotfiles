@@ -91,11 +91,6 @@ run = 'move-node-to-workspace secondary'
 
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = 'move-node-to-workspace secondary'
-
-
-[[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
 run = 'move-node-to-workspace secondary'
 
