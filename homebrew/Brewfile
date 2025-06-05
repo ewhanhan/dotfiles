@@ -1,4 +1,3 @@
-tap "azure/functions"
 tap "felixkratz/formulae"
 tap "nikitabobko/tap"
 brew "ast-grep"
