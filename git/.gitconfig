@@ -88,9 +88,10 @@
 
 [difftool]
     prompt = false
-
-[credential]
-  helper = store
-
 [sequence]
     editor = code --wait
+[credential]
+	helper = /usr/local/bin/git-credential-manager
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
