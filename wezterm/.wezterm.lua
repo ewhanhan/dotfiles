@@ -60,8 +60,6 @@ config.font_rules = {
 }
 
 config.keys = {
-	{ key = "\\", mods = "CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "-", mods = "CTRL", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "a", mods = "CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
 	{ key = "w", mods = "CMD", action = act.DisableDefaultAssignment },
 	{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
