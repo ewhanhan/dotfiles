@@ -1,72 +1,72 @@
 [user]
-    email = 40779221+ewhanhan@users.noreply.github.com
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzxzOUH8tObX0Gr6lVNQ1dZo+ss3kY4HrrBmayfouNB
-    name = ewhanhan
+  email = 40779221+ewhanhan@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzxzOUH8tObX0Gr6lVNQ1dZo+ss3kY4HrrBmayfouNB
+  name = ewhanhan
 
 [gpg]
-    format = ssh
+  format = ssh
 
 [gpg "ssh"]
-    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
-    gpgsign = true
+  gpgsign = true
 
 [branch]
-    sort = -committerdate
+  sort = -committerdate
 
 [merge]
-    conflictstyle = zdiff3
+  conflictstyle = zdiff3
 
 [rebase]
-    autosquash = true
-    autostash = true
+  autosquash = true
+  autostash = true
 
 [init]
-    defaultBranch = main
+  defaultBranch = main
 
 [fetch]
-    prune = true
-    pruneTags = true
+  prune = true
+  pruneTags = true
 
 [push]
-    autoSetupRemove = true
-    followTags = true
+  autoSetupRemove = true
+  followTags = true
 
 [core]
-    pager = delta
-    excludesfile = ~/.gitignore_global
-    attributesfile = ~/.gitattributes
-    precomposeUnicode = true
-    editor = code --wait
+  pager = delta
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+  precomposeUnicode = true
+  editor = code --wait
 
 [delta]
-    navigate = true
-    line-numbers = true
-    true-color = always
-    colorMoved = default
+  navigate = true
+  line-numbers = true
+  true-color = always
+  colorMoved = default
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 
 [column]
-    ui = auto
+  ui = auto
 
 [help]
-    autocorrect = prompt
+  autocorrect = prompt
 
 [include]
-    path = ~/.gitalias.txt
+  path = ~/.gitalias.txt
 
 [credential "https://dev.azure.com"]
-    useHttpPath = true
+  useHttpPath = true
 
 [credential "https://github.com"]
-    helper = !/opt/homebrew/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-    helper = !/opt/homebrew/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential]
-    helper = /usr/local/bin/git-credential-manager
+  helper = /usr/local/bin/git-credential-manager
