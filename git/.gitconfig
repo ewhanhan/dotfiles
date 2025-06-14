@@ -63,10 +63,10 @@
     useHttpPath = true
 
 [credential "https://github.com"]
-    helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-    helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
 
+[credential]
+    helper = /usr/local/bin/git-credential-manager
