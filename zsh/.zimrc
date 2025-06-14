@@ -12,7 +12,6 @@ zmodule ruby
 zmodule ssh
 zmodule archive
 
-zmodule Aloxaf/fzf-tab
 zmodule kiesman99/zim-zoxide
 zmodule joke/zim-github-cli
 zmodule hlissner/zsh-autopair
@@ -26,6 +25,7 @@ zmodule joke/zim-starship
 zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 
+zmodule Aloxaf/fzf-tab
 
 #
 # Modules that must be initialized last
