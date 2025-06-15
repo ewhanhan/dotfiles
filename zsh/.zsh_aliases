@@ -509,3 +509,6 @@ function ssh_unload_key {
     ssh-add -d "$keyfile"
   fi
 }
+
+
+alias claude="~/.claude/local/claude"
