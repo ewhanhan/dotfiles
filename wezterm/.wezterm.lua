@@ -1,10 +1,12 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local on_mac = wezterm.target_triple == "aarch64-apple-darwin"
-local config = wezterm.config_builder and wezterm.config_builder() or {}
-config.automatically_reload_config = true
+local config = {}
 config.term = "wezterm"
 
+if wezterm.config_builder then
+	config = wezterm.config_builder()
+end
 config.default_prog = {
 	"/bin/zsh",
 	"--login",
@@ -35,15 +37,25 @@ config.inactive_pane_hsb = {
 	saturation = 0.6,
 	brightness = 0.6,
 }
-config.font = wezterm.font_with_fallback({
-	"Hasklug Nerd Font Mono", -- Your preferred font
-	"JetBrains Mono", -- Fallback 1
-	"Menlo", -- macOS system fallback
-})
 
-config.scrollback_lines = 1000000
-config.font_size = on_mac and 14 or 16
+config.font_size = on_mac and 14 or 20
 config.line_height = on_mac and 1.2 or 1.25
+config.font = wezterm.font("Hasklug Nerd Font Mono", { weight = "Medium" })
+config.font_rules = {
+	{
+		intensity = "Bold",
+		font = wezterm.font("Hasklug Nerd Font Mono", { weight = "DemiBold" }),
+	},
+	{
+		intensity = "Bold",
+		italic = true,
+		font = wezterm.font("Hasklug Nerd Font Mono", { weight = "DemiBold", style = "Italic" }),
+	},
+	{
+		italic = true,
+		font = wezterm.font("JetBrainsMono Nerd Font", { style = "Italic" }),
+	},
+}
 
 config.keys = {
 	{ key = "a", mods = "CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
