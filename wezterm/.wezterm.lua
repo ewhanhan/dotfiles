@@ -9,12 +9,12 @@ config.default_prog = {
 	"--login",
 	"-c",
 	[[
-	   if command -v tmux >/dev/null 2>&1; then
-	     tmux attach || tmux new;
-	   else
-	     exec zsh;
-	   fi
-	   ]],
+		if command -v tmux >/dev/null 2>&1; then
+			tmux attach || tmux new;
+		else
+			exec zsh;
+		fi
+	]],
 }
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
@@ -55,16 +55,16 @@ config.font_rules = {
 }
 
 config.keys = {
-	{ key = "a", mods = "CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
-	{ key = "w", mods = "CMD", action = act.DisableDefaultAssignment },
-	{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
-	{ key = "K", mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackOnly") },
-	{ key = "K", mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackAndViewport") },
-	{ mods = "CMD", key = "Backspace", action = act.SendKey({ mods = "CTRL", key = "u" }) },
-	{ mods = "OPT", key = "LeftArrow", action = act.SendKey({ mods = "ALT", key = "b" }) },
-	{ mods = "OPT", key = "RightArrow", action = act.SendKey({ mods = "ALT", key = "f" }) },
-	{ mods = "CMD", key = "LeftArrow", action = act.SendKey({ mods = "CTRL", key = "a" }) },
-	{ mods = "CMD", key = "RightArrow", action = act.SendKey({ mods = "CTRL", key = "e" }) },
+	{ key = "a",    mods = "CTRL",       action = act.SendKey({ key = "a", mods = "CTRL" }) },
+	{ key = "w",    mods = "CMD",        action = act.DisableDefaultAssignment },
+	{ key = "w",    mods = "CMD",        action = act.CloseCurrentPane({ confirm = false }) },
+	{ key = "K",    mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "K",    mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackAndViewport") },
+	{ mods = "CMD", key = "Backspace",   action = act.SendKey({ mods = "CTRL", key = "u" }) },
+	{ mods = "OPT", key = "LeftArrow",   action = act.SendKey({ mods = "ALT", key = "b" }) },
+	{ mods = "OPT", key = "RightArrow",  action = act.SendKey({ mods = "ALT", key = "f" }) },
+	{ mods = "CMD", key = "LeftArrow",   action = act.SendKey({ mods = "CTRL", key = "a" }) },
+	{ mods = "CMD", key = "RightArrow",  action = act.SendKey({ mods = "CTRL", key = "e" }) },
 	{
 		key = "t",
 		mods = "CMD",
@@ -168,11 +168,11 @@ wezterm.on("open-uri", function(window, pane, uri)
 			-- No shell detected, we're probably connected with SSH, use fallback command
 			local edit_cmd = url.fragment and editor .. " +" .. url.fragment .. ' "$_f"' or editor .. ' "$_f"'
 			local cmd = '_f="'
-				.. url.file_path
-				.. '"; { test -d "$_f" && { cd "$_f" ; ls -a -p --hyperlink --group-directories-first; }; } '
-				.. '|| { test "$(file --brief --mime-type "$_f" | cut -d/ -f1 || true)" = "text" && '
-				.. edit_cmd
-				.. "; }; echo"
+					.. url.file_path
+					.. '"; { test -d "$_f" && { cd "$_f" ; ls -a -p --hyperlink --group-directories-first; }; } '
+					.. '|| { test "$(file --brief --mime-type "$_f" | cut -d/ -f1 || true)" = "text" && '
+					.. edit_cmd
+					.. "; }; echo"
 			pane:send_text(cmd .. "\r")
 			return false
 		end
