@@ -1,30 +1,30 @@
-start-at-login = true
-after-login-command = []
+start-at-login        = true
+after-login-command   = []
 after-startup-command = [
   'exec-and-forget borders style=round width=6.0 hidpi=on active_color=0xc0e2e2e3 inactive_color=0xc02c2e34 background_color=0x302c2e34',
 ]
 
-enable-normalization-flatten-containers = true
+enable-normalization-flatten-containers                         = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-accordion-padding = 30
+accordion-padding             = 30
 default-root-container-layout = 'tiles'
-key-mapping.preset = 'qwerty'
+key-mapping.preset            = 'qwerty'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = 'move-mouse window-lazy-center'
+on-focus-changed           = 'move-mouse window-lazy-center'
 
 [gaps]
 inner.horizontal = 10
-inner.vertical = 10
-outer.left = 10
-outer.bottom = 10
-outer.top = 10
-outer.right = 10
+inner.vertical   = 10
+outer.left       = 10
+outer.bottom     = 10
+outer.top        = 10
+outer.right      = 10
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -a /Applications/WezTerm.app'
-cmd-h = []
+cmd-h     = []
 cmd-alt-h = []
 
 alt-ctrl-shift-slash = 'layout tiles horizontal vertical'
@@ -44,7 +44,7 @@ alt-shift-ctrl-j = 'move down'
 alt-shift-ctrl-k = 'move up'
 alt-shift-ctrl-l = 'move right'
 
-alt-shift-ctrl-quote = 'resize smart -50'
+alt-shift-ctrl-quote     = 'resize smart -50'
 alt-shift-ctrl-backslash = 'resize smart +50'
 
 cmd-alt-ctrl-shift-m = 'workspace main'
@@ -62,9 +62,9 @@ alt-shift-ctrl-o = 'move-node-to-workspace overflow'
 alt-shift-ctrl-semicolon = 'mode service'
 
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main']
-f = ['layout floating tiling', 'mode main']
+esc       = ['reload-config', 'mode main']
+r         = ['flatten-workspace-tree', 'mode main']
+f         = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-ctrl-h = ['join-with left', 'mode main']
@@ -73,44 +73,44 @@ alt-shift-ctrl-k = ['join-with up', 'mode main']
 alt-shift-ctrl-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-main = ['Studio Display', '^built-in retina display$']
+main      = ['Studio Display', '^built-in retina display$']
 secondary = 'secondary'
 
-# https://nikitabobko.github.io/AeroSpace/goodies#popular-apps-ids
+# https: //nikitabobko.github.io/AeroSpace/goodies#popular-apps-ids
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.facebook.archon.developerID'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
-run = 'move-node-to-workspace secondary'
+run       = 'move-node-to-workspace secondary'
