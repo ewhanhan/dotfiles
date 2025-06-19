@@ -1,12 +1,9 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local on_mac = wezterm.target_triple == "aarch64-apple-darwin"
-local config = {}
+local config = wezterm.config_builder()
 config.term = "wezterm"
 
-if wezterm.config_builder then
-	config = wezterm.config_builder()
-end
 config.default_prog = {
 	"/bin/zsh",
 	"--login",
