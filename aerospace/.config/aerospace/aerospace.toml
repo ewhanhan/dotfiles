@@ -47,6 +47,8 @@ alt-shift-ctrl-l = 'move right'
 
 alt-shift-ctrl-quote = 'resize smart -50'
 alt-shift-ctrl-backslash = 'resize smart +50'
+alt-shift-ctrl-minus = 'resize smart -50'
+alt-shift-ctrl-equal = 'resize smart +50'
 
 cmd-alt-ctrl-shift-m = 'workspace main'
 cmd-alt-ctrl-shift-i = 'workspace info'
