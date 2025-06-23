@@ -18,8 +18,8 @@ config.default_prog = {
 }
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
-config.max_fps = 120
 config.front_end = "WebGpu"
+config.max_fps = 120
 config.enable_scroll_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.native_macos_fullscreen_mode = true
@@ -38,7 +38,6 @@ config.font = wezterm.font("JetBrains Mono")
 
 config.keys = {
 	{ key = "a", mods = "CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
-	{ key = "K", mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackOnly") },
 	{ key = "K", mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackAndViewport") },
 	{ mods = "CMD", key = "Backspace", action = act.SendKey({ mods = "CTRL", key = "u" }) },
 	{ mods = "OPT", key = "LeftArrow", action = act.SendKey({ mods = "ALT", key = "b" }) },
