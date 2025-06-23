@@ -19,8 +19,10 @@ config.default_prog = {
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.max_fps = 120
+config.front_end = "WebGpu"
+config.enable_scroll_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 config.native_macos_fullscreen_mode = true
-config.cell_width = 0.9
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
@@ -29,52 +31,22 @@ config.window_padding = {
 	top = "12px",
 	bottom = "12px",
 }
-config.hide_tab_bar_if_only_one_tab = true
-config.inactive_pane_hsb = {
-	saturation = 0.6,
-	brightness = 0.6,
-}
 
 config.font_size = on_mac and 14 or 20
 config.line_height = on_mac and 1.2 or 1.25
-config.font = wezterm.font("Hasklug Nerd Font Mono", { weight = "Medium" })
-config.font_rules = {
-	{
-		intensity = "Bold",
-		font = wezterm.font("Hasklug Nerd Font Mono", { weight = "DemiBold" }),
-	},
-	{
-		intensity = "Bold",
-		italic = true,
-		font = wezterm.font("Hasklug Nerd Font Mono", { weight = "DemiBold", style = "Italic" }),
-	},
-	{
-		italic = true,
-		font = wezterm.font("JetBrainsMono Nerd Font", { style = "Italic" }),
-	},
-}
+config.font = wezterm.font("JetBrains Mono")
 
 config.keys = {
-	{ key = "a",    mods = "CTRL",       action = act.SendKey({ key = "a", mods = "CTRL" }) },
-	{ key = "w",    mods = "CMD",        action = act.DisableDefaultAssignment },
-	{ key = "w",    mods = "CMD",        action = act.CloseCurrentPane({ confirm = false }) },
-	{ key = "K",    mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackOnly") },
-	{ key = "K",    mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackAndViewport") },
-	{ mods = "CMD", key = "Backspace",   action = act.SendKey({ mods = "CTRL", key = "u" }) },
-	{ mods = "OPT", key = "LeftArrow",   action = act.SendKey({ mods = "ALT", key = "b" }) },
-	{ mods = "OPT", key = "RightArrow",  action = act.SendKey({ mods = "ALT", key = "f" }) },
-	{ mods = "CMD", key = "LeftArrow",   action = act.SendKey({ mods = "CTRL", key = "a" }) },
-	{ mods = "CMD", key = "RightArrow",  action = act.SendKey({ mods = "CTRL", key = "e" }) },
+	{ key = "a", mods = "CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
+	{ key = "K", mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "K", mods = "CTRL|SHIFT", action = act.ClearScrollback("ScrollbackAndViewport") },
+	{ mods = "CMD", key = "Backspace", action = act.SendKey({ mods = "CTRL", key = "u" }) },
+	{ mods = "OPT", key = "LeftArrow", action = act.SendKey({ mods = "ALT", key = "b" }) },
+	{ mods = "OPT", key = "RightArrow", action = act.SendKey({ mods = "ALT", key = "f" }) },
+	{ mods = "CMD", key = "LeftArrow", action = act.SendKey({ mods = "CTRL", key = "a" }) },
+	{ mods = "CMD", key = "RightArrow", action = act.SendKey({ mods = "CTRL", key = "e" }) },
 	{
 		key = "t",
-		mods = "CMD",
-		action = wezterm.action.Multiple({
-			wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
-			wezterm.action.SendKey({ key = "c" }),
-		}),
-	},
-	{
-		key = "n",
 		mods = "CMD",
 		action = wezterm.action.Multiple({
 			wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
@@ -109,6 +81,52 @@ config.keys = {
 		key = "/",
 		mods = "CTRL",
 		action = act.Search({ CaseInSensitiveString = "" }),
+	},
+	-- Tmux-aware navigation
+	{
+		key = "1",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "1" }) }),
+	},
+	{
+		key = "2",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "2" }) }),
+	},
+	{
+		key = "3",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "3" }) }),
+	},
+	{
+		key = "4",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "4" }) }),
+	},
+	{
+		key = "5",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "5" }) }),
+	},
+	{
+		key = "6",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "6" }) }),
+	},
+	{
+		key = "7",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "7" }) }),
+	},
+	{
+		key = "8",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "8" }) }),
+	},
+	{
+		key = "9",
+		mods = "CMD",
+		action = act.Multiple({ act.SendKey({ key = "a", mods = "CTRL" }), act.SendKey({ key = "9" }) }),
 	},
 }
 
@@ -168,11 +186,11 @@ wezterm.on("open-uri", function(window, pane, uri)
 			-- No shell detected, we're probably connected with SSH, use fallback command
 			local edit_cmd = url.fragment and editor .. " +" .. url.fragment .. ' "$_f"' or editor .. ' "$_f"'
 			local cmd = '_f="'
-					.. url.file_path
-					.. '"; { test -d "$_f" && { cd "$_f" ; ls -a -p --hyperlink --group-directories-first; }; } '
-					.. '|| { test "$(file --brief --mime-type "$_f" | cut -d/ -f1 || true)" = "text" && '
-					.. edit_cmd
-					.. "; }; echo"
+				.. url.file_path
+				.. '"; { test -d "$_f" && { cd "$_f" ; ls -a -p --hyperlink --group-directories-first; }; } '
+				.. '|| { test "$(file --brief --mime-type "$_f" | cut -d/ -f1 || true)" = "text" && '
+				.. edit_cmd
+				.. "; }; echo"
 			pane:send_text(cmd .. "\r")
 			return false
 		end
