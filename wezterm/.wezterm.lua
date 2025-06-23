@@ -1,6 +1,5 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local on_mac = wezterm.target_triple == "aarch64-apple-darwin"
 local config = wezterm.config_builder()
 config.term = "wezterm"
 
@@ -22,7 +21,6 @@ config.front_end = "WebGpu"
 config.max_fps = 120
 config.enable_scroll_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.native_macos_fullscreen_mode = true
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
@@ -32,8 +30,8 @@ config.window_padding = {
 	bottom = "12px",
 }
 
-config.font_size = on_mac and 14 or 20
-config.line_height = on_mac and 1.2 or 1.25
+config.font_size = 14
+config.line_height = 1.2
 config.font = wezterm.font("JetBrains Mono")
 
 config.keys = {
