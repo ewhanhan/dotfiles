@@ -37,7 +37,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export CONFIG_DIR="$HOME/.config/lazygit"
 
 path=(
-  "$HOME/.docker/bin"
   "$HOME/.tmux/plugins/tmuxifier/bin" 
   "$HOME/.local/bin"
   $path
