@@ -47,19 +47,21 @@ path=(
 # Lazy loading pyenv
 # ------------------
 export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
-if [[ -d "$PYENV_ROOT" ]]; then
-  # Add pyenv paths early in the path array
-  path=("${PYENV_ROOT}/shims" "${PYENV_ROOT}/bin" $path)
-  
-  function pyenv() {
-    unset -f pyenv
-    # Re-initialize to ensure proper setup
-    eval "$(command pyenv init -)"
-    if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
-      eval "$(command pyenv virtualenv-init -)"
-    fi
-    pyenv "$@"
-  }
+if ! type pyenv > /dev/null && [ -f "${PYENV_ROOT}/bin/pyenv" ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+fi
+
+# Lazy load pyenv
+if type pyenv > /dev/null; then
+    export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init -)"
+        if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
+            eval "$(command pyenv virtualenv-init -)"
+        fi
+        pyenv $@
+    }
 fi
 
 # ------------------
