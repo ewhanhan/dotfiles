@@ -1,33 +1,33 @@
+############################ Shell & Editor Configuration ############################
+
+# Framework and tool management
+alias zimU="zimfw install -v; zimfw uninstall -v; zimfw update -v; zimfw upgrade -v"
+alias claude="~/.claude/local/claude"
+
+# Editor aliases
 alias vim="nvim"
 alias vi="nvim"
 alias nvimU='nvim --headless "+Lazy! sync" +qa'
+
+# Shell utilities
 alias EDITOR="code --wait"
 alias c="clear"
 alias s="exec $SHELL -l"
-alias npmG="npm list -g --depth=0"
-alias python="python3"
-alias zimU="zimfw install -v; zimfw uninstall -v; zimfw update -v; zimfw upgrade -v"
-alias d="docker"
-alias docker-compose="docker compose --compatability $@"
-alias dc="docker-compose"
-alias N="npm run"
 
-alias l="eza -1 --icons --show-symlinks -a --group-directories-first"
-alias ls="l"
+############################ File & Directory Operations ############################
+
+# File listing with eza
+alias l="eza --icons --show-symlinks -a --group-directories-first"
+alias ls="l -l"
 alias ll="l -lF"
 alias lsa="l -lF"
+alias lr='ll -T'              # Long format, recursive as a tree
+alias lx='ll -sextension'     # Long format, sort by extension
+alias lk='ll -ssize'          # Long format, largest file size last
+alias lt='ll -smodified'      # Long format, newest modification time last
+alias lc='ll -schanged'       # Long format, newest status change (ctime) last
 
-alias ping="prettyping"
-
-alias ddkill="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
-alias macU="softwareupdate -i -a --no-scan --agree-to-license"
-alias uuu="brewup; npmU; zimU; mas upgrade; nvimU; macU; tpmU; s"
-alias buz="brew uninstall --zap"
-alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
-alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
-alias cacheD="rm -rf ~/Library/Caches/*;"
-alias cacheS="du -sh ~/Library/Caches"
-
+# Directory navigation shortcuts
 alias ...=../..
 alias ....=../../..
 alias .....=../../../..
@@ -41,254 +41,69 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+
+# System utilities
 alias _='sudo'
 
+############################ System & Package Management ############################
+
+# macOS system updates
+alias macU="softwareupdate -i -a --no-scan --agree-to-license"
+
+# Master update command
+alias uuu="brewup; npmU; zimU; mas upgrade; nvimU; macU; tpmU; s"
+
+# Homebrew management
+alias buz="brew uninstall --zap"
+alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
+alias brewdump="brew bundle dump --file=~/.dotfiles/Homebrew/Brewfile --force"
+
+# Cache management
+alias cacheD="rm -rf ~/Library/Caches/*;"
+alias cacheS="du -sh ~/Library/Caches"
+
+############################ Development Tools ############################
+
+# Git tools
 alias lg="lazygit"
 
-alias ncu-patch="ncu -i --target patch --concurrency 12"
-alias ncu-minor="ncu -i --target minor --concurrency 12"
-
-############################ git #############################
-
 local gprefix="g"
-
-# Git
 alias ${gprefix}='git'
 
-# Branch (b)
-alias ${gprefix}b='git branch'
-alias ${gprefix}bc='git checkout -b'
-alias ${gprefix}bd='git checkout --detach'
-alias ${gprefix}bl='git branch -vv'
-alias ${gprefix}bL='git branch --all -vv'
-alias ${gprefix}bn='git branch --no-contains'
-alias ${gprefix}bm='git branch --move'
-alias ${gprefix}bM='git branch --move --force'
-alias ${gprefix}bR='git branch --force'
-alias ${gprefix}bs='git show-branch'
-alias ${gprefix}bS='git show-branch --all'
-alias ${gprefix}bu='git branch --unset-upstream'
-alias ${gprefix}bG='git-branch-remote-tracking gone | xargs -r git branch --delete --force'
-alias ${gprefix}bx='git-branch-delete-interactive'
-alias ${gprefix}bX='git-branch-delete-interactive --force'
+# tmux and plugin management
+local tpmPrefix="tpm"
+alias ${tpmPrefix}I='~/.tmux/plugins/tpm/bin/install_plugins'
+alias ${tpmPrefix}C='~/.tmux/plugins/tpm/bin/clean_plugins'
+alias ${tpmPrefix}U='~/.tmux/plugins/tpm/bin/update_plugins all'
 
-# Commit (c)
-alias ${gprefix}c='git commit --verbose'
-alias ${gprefix}ca='git commit --verbose --all'
-alias ${gprefix}cA='git commit --verbose --patch'
-alias ${gprefix}cm='git commit --message'
-alias ${gprefix}co='git checkout'
-alias ${gprefix}cO='git checkout --patch'
-alias ${gprefix}cf='git commit --amend --reuse-message HEAD'
-alias ${gprefix}cF='git commit --verbose --amend'
-alias ${gprefix}cp='git cherry-pick'
-alias ${gprefix}cP='git cherry-pick --no-commit'
-alias ${gprefix}cr='git revert'
-alias ${gprefix}cR='git reset "HEAD^"'
-alias ${gprefix}cs='git show --pretty=format:"${_git_log_fuller_format}"'
-alias ${gprefix}cS='git commit --verbose -S'
-alias ${gprefix}cu='git commit --fixup'
-alias ${gprefix}cU='git commit --squash'
-alias ${gprefix}cv='git verify-commit'
+############################ Node.js & npm ############################
 
-# Conflict (C)
-alias ${gprefix}Cl='git --no-pager diff --diff-filter=U --name-only'
-alias ${gprefix}Ca="git add \$(${gprefix}Cl)"
-alias ${gprefix}Ce="git mergetool \$(${gprefix}Cl)"
-alias ${gprefix}Co='git checkout --ours --'
-alias ${gprefix}CO="${gprefix}Co \$(${gprefix}Cl)"
-alias ${gprefix}Ct='git checkout --theirs --'
-alias ${gprefix}CT="${gprefix}Ct \$(${gprefix}Cl)"
+# Basic npm shortcuts
+alias N="npm run"
+alias npmG="npm list -g --depth=0"
 
-# Data (d)
-alias ${gprefix}d='git ls-files'
-alias ${gprefix}dc='git ls-files --cached'
-alias ${gprefix}dx='git ls-files --deleted'
-alias ${gprefix}dm='git ls-files --modified'
-alias ${gprefix}du='git ls-files --other --exclude-standard'
-alias ${gprefix}dk='git ls-files --killed'
-alias ${gprefix}di='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
-alias ${gprefix}dI='git ls-files --ignored --exclude-per-directory=.gitignore --cached'
+# npm package installation
+alias npmg="npm i -g "              # Install dependencies globally
+alias npmS="npm i -S "              # Install and save to dependencies
+alias npmD="npm i -D "              # Install and save to dev-dependencies  
+alias npmF='npm i -f'               # Force npm to fetch remote resources
 
-# Fetch (f)
-alias ${gprefix}f='git fetch'
-alias ${gprefix}fa='git fetch --all'
-alias ${gprefix}fp='git fetch --all --prune'
-alias ${gprefix}fc='git clone'
-alias ${gprefix}fm='git pull --no-rebase'
-alias ${gprefix}fr='git pull --rebase'
-alias ${gprefix}fu='git pull --ff-only --all --prune'
+# npm utility commands
 
-# Grep (g)
-alias ${gprefix}g='git grep'
-alias ${gprefix}gi='git grep --ignore-case'
-alias ${gprefix}gl='git grep --files-with-matches'
-alias ${gprefix}gL='git grep --files-without-match'
-alias ${gprefix}gv='git grep --invert-match'
-alias ${gprefix}gw='git grep --word-regexp'
+# npm script shortcuts
+alias npmst="N start"             # Run npm start
+alias npmt="N test"               # Run npm test
+alias npmR="N"                # Run npm scripts
+alias npmrd="N dev"           # Run npm run dev
+alias npmrb="N build"         # Run npm run build
 
-# Index (i)
-alias ${gprefix}ia='git add'
-alias ${gprefix}iA='git add --patch'
-alias ${gprefix}iu='git add --update'
-alias ${gprefix}iU='git add --verbose --all'
-alias ${gprefix}id='git diff --no-ext-diff --cached'
-alias ${gprefix}iD='git diff --no-ext-diff --cached --word-diff'
-alias ${gprefix}ir='git reset'
-alias ${gprefix}iR='git reset --patch'
-alias ${gprefix}ix='git rm --cached -r'
-alias ${gprefix}iX='git rm --cached -rf'
+# npm-check-updates (conditional)
+if (( ${+commands[ncu]} )); then
+  alias ncu-patch="ncu -i --target patch --concurrency 12"
+  alias ncu-minor="ncu -i --target minor --concurrency 12"
+fi
 
-# Log (l)
-alias ${gprefix}l='git log --date-order --pretty=format:"${_git_log_fuller_format}"'
-alias ${gprefix}ls='git log --date-order --stat --pretty=format:"${_git_log_fuller_format}"'
-alias ${gprefix}ld='git log --date-order --stat --patch --pretty=format:"${_git_log_fuller_format}"'
-alias ${gprefix}lf='git log --date-order --stat --patch --follow --pretty=format:"${_git_log_fuller_format}"'
-alias ${gprefix}lo='git log --date-order --pretty=format:"${_git_log_oneline_format}"'
-alias ${gprefix}lO='git log --date-order --pretty=format:"${_git_log_oneline_medium_format}"'
-alias ${gprefix}lg='git log --date-order --graph --pretty=format:"${_git_log_oneline_format}"'
-alias ${gprefix}lG='git log --date-order --graph --pretty=format:"${_git_log_oneline_medium_format}"'
-alias ${gprefix}lv='git log --date-order --show-signature --pretty=format:"${_git_log_fuller_format}"'
-alias ${gprefix}lc='git shortlog --summary --numbered'
-alias ${gprefix}lr='git reflog'
-
-# Merge (m)
-alias ${gprefix}m='git merge'
-alias ${gprefix}ma='git merge --abort'
-alias ${gprefix}mc='git merge --continue'
-alias ${gprefix}mC='git merge --no-commit'
-alias ${gprefix}mF='git merge --no-ff'
-alias ${gprefix}ms='git merge --squash'
-alias ${gprefix}mS='git merge -S'
-alias ${gprefix}mv='git merge --verify-signatures'
-alias ${gprefix}mt='git mergetool'
-
-# Push (p)
-alias ${gprefix}p='git push'
-alias ${gprefix}pf='git push --force-with-lease'
-alias ${gprefix}pF='git push --force'
-alias ${gprefix}pa='git push --all'
-alias ${gprefix}pA='git push --all && git push --tags --no-verify'
-alias ${gprefix}pt='git push --tags'
-alias ${gprefix}pc='git push --set-upstream origin "$(git-branch-current 2>/dev/null)"'
-alias ${gprefix}pp='git pull origin "$(git-branch-current 2>/dev/null)" && git push origin "$(git-branch-current 2>/dev/null)"'
-
-# Rebase (r)
-alias ${gprefix}r='git rebase'
-alias ${gprefix}ra='git rebase --abort'
-alias ${gprefix}rc='git rebase --continue'
-alias ${gprefix}ri='git rebase --interactive --autosquash'
-alias ${gprefix}rs='git rebase --skip'
-alias ${gprefix}rS='git rebase --exec "git commit --amend --no-edit --no-verify -S"'
-
-# Remote (R)
-alias ${gprefix}R='git remote'
-alias ${gprefix}Rl='git remote --verbose'
-alias ${gprefix}Ra='git remote add'
-alias ${gprefix}Rx='git remote rm'
-alias ${gprefix}Rm='git remote rename'
-alias ${gprefix}Ru='git remote update'
-alias ${gprefix}Rp='git remote prune'
-alias ${gprefix}Rs='git remote show'
-alias ${gprefix}RS='git remote set-url'
-
-# Stash (s)
-alias ${gprefix}s='git stash'
-alias ${gprefix}sa='git stash apply'
-alias ${gprefix}sx='git stash drop'
-alias ${gprefix}sX='git-stash-clear-interactive'
-alias ${gprefix}sl='git stash list'
-alias ${gprefix}sd='git stash show --patch --stat'
-alias ${gprefix}sp='git stash pop'
-alias ${gprefix}sr='git-stash-recover'
-alias ${gprefix}ss='git stash save --include-untracked'
-alias ${gprefix}sS='git stash save --patch --no-keep-index'
-alias ${gprefix}sw='git stash save --include-untracked --keep-index'
-alias ${gprefix}si='git stash push --staged' # requires Git 2.35
-alias ${gprefix}su='git stash show --patch | git apply --reverse'
-
-# Submodule (S)
-alias ${gprefix}S='git submodule'
-alias ${gprefix}Sa='git submodule add'
-alias ${gprefix}Sf='git submodule foreach'
-alias ${gprefix}Si='git submodule init'
-alias ${gprefix}SI='git submodule update --init --recursive'
-alias ${gprefix}Sl='git submodule status'
-alias ${gprefix}Sm='git-submodule-move'
-alias ${gprefix}Ss='git submodule sync'
-alias ${gprefix}Su='git submodule update --remote'
-alias ${gprefix}Sx='git-submodule-remove'
-
-# Tag (t)
-alias ${gprefix}t='git tag'
-alias ${gprefix}tl='git tag --list --sort=-committerdate'
-alias ${gprefix}ts='git tag --sign'
-alias ${gprefix}tv='git verify-tag'
-alias ${gprefix}tx='git tag --delete'
-
-# Main working tree (w)
-alias ${gprefix}ws='git status --short'
-alias ${gprefix}wS='git status'
-alias ${gprefix}wd='git diff --no-ext-diff'
-alias ${gprefix}wD='git diff --no-ext-diff --word-diff'
-alias ${gprefix}wr='git reset --soft'
-alias ${gprefix}wR='git reset --hard'
-alias ${gprefix}wc='git clean --dry-run'
-alias ${gprefix}wC='git clean -d --force'
-alias ${gprefix}wm='git mv'
-alias ${gprefix}wM='git mv -f'
-alias ${gprefix}wx='git rm -r'
-alias ${gprefix}wX='git rm -rf'
-
-# Working trees (W)
-alias ${gprefix}W='git worktree'
-alias ${gprefix}Wa='git worktree add'
-alias ${gprefix}Wl='git worktree list'
-alias ${gprefix}Wm='git worktree move'
-alias ${gprefix}Wp='git worktree prune'
-alias ${gprefix}Wx='git worktree remove'
-alias ${gprefix}WX='git worktree remove --force'
-
-# Switch (y)
-alias ${gprefix}y='git switch' # requires Git 2.23
-alias ${gprefix}yc='git switch --create'
-alias ${gprefix}yd='git switch --detach'
-
-# Misc
-alias ${gprefix}..='cd "$(git-root || print .)"'
-alias ${gprefix}\?="git-alias-lookup ${gmodule_home}"
-
-############################ tmux #############################
-# TPM / tmux
-alias tpmI='~/.tmux/plugins/tpm/bin/install_plugins'
-alias tpmC='~/.tmux/plugins/tpm/bin/clean_plugins'
-alias tpmU='~/.tmux/plugins/tpm/bin/update_plugins all'
-
-
-# Install dependencies globally
-alias npmg="npm i -g "
-
-# npm package names are lowercase
-# Thus, we've used camelCase for the following aliases:
-
-# Install and save to dependencies in your package.json
-# npms is used by https://www.npmjs.com/package/npms
-alias npmS="npm i -S "
-
-# Install and save to dev-dependencies in your package.json
-# npmd is used by https://github.com/dominictarr/npmd
-alias npmD="npm i -D "
-
-# Force npm to fetch remote resources even if a local copy exists on disk.
-alias npmF='npm i -f'
-
-# Execute command from node_modules folder based on current directory
-# i.e npmE gulp
-alias npmE='PATH="$(npm bin)":"$PATH"'
-
-# Check which npm modules are outdated
-alias npmO="npm outdated"
-
+# Global npm package updater function
 npmU() {
     echo "Checking for updates for globally installed npm packages..."
     ncu -g --concurrency 12 |
@@ -311,49 +126,26 @@ npmU() {
         }
 }
 
-# Check package versions
-alias npmV="npm -v"
+############################ Python Development ############################
 
-# List packages
-alias npmL="npm list"
-
-# List top-level installed packages
-alias npmL0="npm ls --depth=0"
-
-# Run npm start
-alias npmst="npm start"
-
-# Run npm test
-alias npmt="npm test"
-
-# Run npm scripts
-alias npmR="npm run"
-
-# Run npm publish
-alias npmP="npm publish"
-
-# Run npm init
-alias npmI="npm init"
-
-# Run npm info
-alias npmi="npm info"
-
-# Run npm search
-alias npmSe="npm search"
-
-# Run npm run dev
-alias npmrd="npm run dev"
-
-# Run npm run build
-alias npmrb="npm run build"
-
+# Python basics
+alias python="python3"
 builtin which py > /dev/null || alias py='python3'
 
-# Find python file
-alias pyfind='find . -name "*.py"'
+# Python utilities
+alias pygrep='grep -nr --include="*.py"'  # Find python files
+alias pyserver="python3 -m http.server"   # Quick HTTP server
 
-# Remove python compiled byte-code and mypy/pytest cache in either the current
-# directory or in a list of specified directories (including sub directories).
+# pip package management
+alias pipi="pip3 install"                  # Install package
+alias pipu="pip3 install --upgrade"        # Upgrade package
+alias pipun="pip3 uninstall"               # Uninstall package
+alias pipgi="pip3 freeze | grep"           # Search installed packages
+alias piplo="pip3 list -o"                 # List outdated packages
+alias pipreq="pip3 freeze > requirements.txt"  # Export requirements
+alias pipir="pip3 install -r requirements.txt" # Install from requirements
+
+# Python environment cleanup function
 function pyclean() {
   find "${@:-.}" -type f -name "*.py[co]" -delete
   find "${@:-.}" -type d -name "__pycache__" -delete
@@ -361,9 +153,7 @@ function pyclean() {
   find "${@:-.}" -depth -type d -name ".pytest_cache" -exec rm -r "{}" +
 }
 
-# Add the user installed site-packages paths to PYTHONPATH, only if the
-#   directory exists. Also preserve the current PYTHONPATH value.
-# Feel free to autorun this when .zshrc loads.
+# Python user paths function
 function pyuserpaths() {
   setopt localoptions extendedglob
 
@@ -388,11 +178,10 @@ function pyuserpaths() {
   done
 }
 
-## venv utilities
+# Python virtual environment utilities
 : ${PYTHON_VENV_NAME:=venv}
 
-# Activate a the python virtual environment specified.
-# If none specified, use $PYTHON_VENV_NAME, else 'venv'.
+# Activate virtual environment
 function vrun() {
   local name="${1:-$PYTHON_VENV_NAME}"
   local venvpath="${name:P}"
@@ -411,8 +200,7 @@ function vrun() {
   echo "Activated virtual environment ${name}"
 }
 
-# Create a new virtual environment using the specified name.
-# If none specified, use $PYTHON_VENV_NAME
+# Create virtual environment
 function mkv() {
   local name="${1:-$PYTHON_VENV_NAME}"
   local venvpath="${name:P}"
@@ -422,8 +210,8 @@ function mkv() {
   vrun "${name}"
 }
 
+# Auto-activate virtual environment on directory change
 if [[ "$PYTHON_AUTO_VRUN" == "true" ]]; then
-  # Automatically activate venv when changing dir
   function auto_vrun() {
     # deactivate if we're on a different dir than VIRTUAL_ENV states
     # we don't deactivate subdirectories!
@@ -444,25 +232,15 @@ if [[ "$PYTHON_AUTO_VRUN" == "true" ]]; then
   auto_vrun
 fi
 
-alias python="python3"
-alias pygrep='grep -nr --include="*.py"'
-alias pyserver="python3 -m http.server"
-alias pipi="pip3 install"
-alias pipu="pip3 install --upgrade"
-alias pipun="pip3 uninstall"
-alias pipgi="pip3 freeze | grep"
-alias piplo="pip3 list -o"
-alias pipreq="pip3 freeze > requirements.txt"
-alias pipir="pip3 install -r requirements.txt"
+############################ Network & File Transfer ############################
 
+# rsync shortcuts
 alias rsync-copy="rsync -avz --progress -h"
 alias rsync-move="rsync -avz --progress -h --remove-source-files"
 alias rsync-update="rsync -avzu --progress -h"
 alias rsync-synchronize="rsync -avzu --delete --progress -h"
 
-# Take all host sections in .ssh/config and offer them for
-# completion as hosts (e.g. for ssh, rsync, scp and the like)
-# Filter out wildcard host sections.
+# SSH host completion setup
 _ssh_configfile="$HOME/.ssh/config"
 if [[ -f "$_ssh_configfile" ]]; then
   _ssh_hosts=($(
@@ -478,8 +256,7 @@ if [[ -f "$_ssh_configfile" ]]; then
 fi
 unset _ssh_configfile
 
-# Remove host key from known hosts based on a host section
-# name from .ssh/config
+# SSH key management functions
 function ssh_rmhkey {
   local ssh_configfile="$HOME/.ssh/config"
   local ssh_host="$1"
@@ -488,7 +265,6 @@ function ssh_rmhkey {
 }
 compctl -k hosts ssh_rmhkey
 
-# Load SSH key into agent
 function ssh_load_key() {
   local key="$1"
   if [[ -z "$key" ]]; then return; fi
@@ -499,7 +275,6 @@ function ssh_load_key() {
   fi
 }
 
-# Remove SSH key from agent
 function ssh_unload_key {
   local key="$1"
   if [[ -z "$key" ]]; then return; fi
@@ -509,6 +284,3 @@ function ssh_unload_key {
     ssh-add -d "$keyfile"
   fi
 }
-
-
-alias claude="~/.claude/local/claude"
