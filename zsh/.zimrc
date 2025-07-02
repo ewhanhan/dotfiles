@@ -11,6 +11,7 @@ zmodule fzf
 zmodule ruby
 zmodule ssh
 zmodule archive
+zmodule pvenv
 
 zmodule kiesman99/zim-zoxide
 zmodule joke/zim-github-cli
