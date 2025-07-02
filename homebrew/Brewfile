@@ -32,6 +32,7 @@ brew "mas"
 brew "ncdu"
 brew "neovim"
 brew "node"
+brew "npm-check-updates"
 brew "oxipng"
 brew "perl"
 brew "pipx"
@@ -40,7 +41,6 @@ brew "pngquant"
 brew "pnpm"
 brew "poppler"
 brew "portaudio"
-brew "prettyping"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "resvg"
@@ -99,7 +99,6 @@ mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Refined GitHub", id: 1519867270
 mas "Sink It", id: 6449873635
-mas "TestFlight", id: 899247664
 mas "Velja", id: 1607635845
 mas "Wipr", id: 1662217862
 vscode "alefragnani.bookmarks"
