@@ -57,9 +57,9 @@
 # ## Tracking
 #
 #   * Package: gitalias
-#   * Version: 28.0.1
+#   * Version: 28.1.0
 #   * Created: 2016-06-17T22:05:43Z
-#   * Updated: 2023-05-31T11:39:14Z
+#   * Updated: 2025-02-19T01:59:02Z
 #   * License: GPL-2.0-or-later or contact us for custom license
 #   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
@@ -92,10 +92,10 @@
 
   ### add aliases ###
 
-  ## add all
+  # add all
   aa = add --all
 
-  # add by patch - looks at each change, and asks if we want to put it in the repo.
+  # add by patch - look at each change, and asks if we want to put it in the repo.
   ap = add --patch
 
   # add just the files that are updated.
@@ -1153,7 +1153,7 @@
   # git checks you're current with remote, and only then allows the push.
   # We name this `pushy` because its dsagreeably aggressive (in general)
   # or overly assertive (in general), yet still better than just --force.
-  pushy = !git push --force-with-lease
+  pushy = push --force-with-lease
 
   # Do everything we can to synchronize all changes for the current branch.
   #
@@ -1186,10 +1186,14 @@
   track = "!f(){ branch=\"$(git current-branch)\"; cmd=\"git branch $branch --set-upstream-to=${1:-origin}/${2:-$branch}\"; echo \"$cmd\"; $cmd; }; f"
   untrack = "!f(){ branch=\"$(git current-branch)\"; cmd=\"git branch --unset-upstream ${1:-$branch}\"; echo \"$cmd\"; $cmd; }; f"
 
-  # Track all remote branches that aren't already being tracked;
-  # this is a bit hacky because of the parsing, and we welcome
-  # better code that works using more-specific git commands.
-  track-all-remote-branches = "!f() { git branch --remotes | grep -v ' -> ' | sed 's/^ \\+origin\\///' ; }; f"
+  # Track all remote branches.
+  # This code requires Git 2.23+ with the `switch` command.
+  # https://stackoverflow.com/questions/379081/how-to-track-all-remote-git-branches-as-local-branches
+  track-all-remote-branches = "!f() { \
+    for x in $(git for-each-ref --format=\"%(refname:short)\" --no-merged=origin/HEAD refs/remotes/origin); do \
+      git switch --track \"$x\"; \
+    done; \
+  }; f"
 
   ### reset-* & undo-* ###
 
@@ -1623,7 +1627,13 @@
   #
   # Example:
   #
-  #     git topic-begin add-feature-foo
+  #     git topic-start add-feature-foo
+  #
+  # These aliases are identical and are for people
+  # who prefer the word "start" or the word "begin":
+  #
+  #   * topic-start
+  #   * topic-begin
   #
   # We use this alias to begin work on a new feature,
   # new task, new fix, new refactor, new optimization, etc.
@@ -1643,7 +1653,7 @@
   # the team provide feedback on the work-in-progress, and also to
   # run any automatic tests to verify the branch runs successfully.
 
-  topic-begin = "!f(){ \
+  topic-start = "!f(){ \
     new_branch=\"$1\"; \
     old_branch=\"$(git topic-base-branch)\"; \
     git checkout \"$old_branch\"; \
@@ -1652,11 +1662,19 @@
     git push --set-upstream origin \"$new_branch\"; \
   };f"
 
+  topic-begin = topic-start
+
   # Stop a topic branch; this must be the current branch.
   #
   # Example:
   #
-  #     git topic-end
+  #     git topic-finish
+  #
+  # These aliases are identical and are for people
+  # who prefer the word "finish" or the word "end":
+  #
+  #   * topic-finish
+  #   * topic-end
   #
   # We use this alias to complete work on a new feature,
   # new task, new fix, new refactor, new optimization, etc.
@@ -1697,6 +1715,8 @@
     fi; \
   };f"
 
+  topic-end = topic-finish
+  
   # Update the current topic branch by synchronizing changes.
   #
   # Example:
@@ -1778,6 +1798,7 @@
   svn-m = merge --squash
   svn-c = svn dcommit
   svn-cp = !GIT_EDITOR='sed -i /^git-svn-id:/d' git cherry-pick --edit
+
 
 ########################################################################
 ### Custom 
