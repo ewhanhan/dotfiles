@@ -8,6 +8,7 @@ alias claude="~/.claude/local/claude"
 alias vim="nvim"
 alias vi="nvim"
 alias nvimU='nvim --headless "+Lazy! sync" "+TSUpdateSync all" +qa'
+alias codeU='code --update-extensions'
 
 # Shell utilities
 alias EDITOR="code --wait"
@@ -51,7 +52,7 @@ alias _='sudo'
 alias macU="softwareupdate -i -a --no-scan --agree-to-license"
 
 # Master update command
-alias uuu="brewup; npmU; zimU; mas upgrade; nvimU; macU; tpmU; s"
+# alias uuu="zimU & tpmU & brewup & npmU & mas upgrade & wait; macU; s"
 
 # Homebrew management
 alias buz="brew uninstall --zap"
@@ -72,6 +73,7 @@ alias ${gprefix}='git'
 
 # tmux and plugin management
 local tpmPrefix="tpm"
+alias ${tpmPrefix}S="tmux source-file ~/.tmux.conf"
 alias ${tpmPrefix}I='~/.tmux/plugins/tpm/bin/install_plugins'
 alias ${tpmPrefix}C='~/.tmux/plugins/tpm/bin/clean_plugins'
 alias ${tpmPrefix}U='~/.tmux/plugins/tpm/bin/update_plugins all'
