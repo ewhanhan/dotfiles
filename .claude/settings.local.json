@@ -4,7 +4,8 @@
       "Bash(mkdir:*)",
       "Bash(tmux source-file:*)",
       "Bash(find:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }
