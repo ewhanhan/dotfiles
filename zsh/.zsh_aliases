@@ -7,7 +7,7 @@ alias claude="~/.claude/local/claude"
 # Editor aliases
 alias vim="nvim"
 alias vi="nvim"
-alias nvimU='nvim --headless "+Lazy! sync" +qa'
+alias nvimU='nvim --headless "+Lazy! sync" "+TSUpdateSync all" +qa'
 
 # Shell utilities
 alias EDITOR="code --wait"
