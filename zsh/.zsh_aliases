@@ -51,9 +51,6 @@ alias _='sudo'
 # macOS system updates
 alias macU="softwareupdate -i -a --no-scan --agree-to-license"
 
-# Master update command
-# alias uuu="zimU & tpmU & brewup & npmU & mas upgrade & wait; macU; s"
-
 # Homebrew management
 alias buz="brew uninstall --zap"
 alias brewup="brew update; brew upgrade; brew autoremove; brew cleanup --prune=all; brew doctor;"
@@ -72,8 +69,9 @@ local gprefix="g"
 alias ${gprefix}='git'
 
 # tmux and plugin management
+alias tmuxS="tmux source-file ~/.tmux.conf"
+
 local tpmPrefix="tpm"
-alias ${tpmPrefix}S="tmux source-file ~/.tmux.conf"
 alias ${tpmPrefix}I='~/.tmux/plugins/tpm/bin/install_plugins'
 alias ${tpmPrefix}C='~/.tmux/plugins/tpm/bin/clean_plugins'
 alias ${tpmPrefix}U='~/.tmux/plugins/tpm/bin/update_plugins all'
@@ -285,4 +283,28 @@ function ssh_unload_key {
   if ( ssh-add -l | grep -q "$keysig" ); then
     ssh-add -d "$keyfile"
   fi
+}
+
+############################ Master Update Function ############################
+
+# Master update command - defined at bottom after all dependencies
+uuu() {
+  echo "Starting system updates..."
+  (brewup)
+  
+  # Group 1: Fast framework updates (parallel)
+  echo "Updating frameworks..."
+  zimU &
+  tpmU &
+  
+  # Group 2: Network-intensive updates (parallel)
+  echo "Updating packages and editors..."
+  mas upgrade &
+  nvimU &
+  npmU &
+  macU & 
+  wait
+  
+  tmuxS
+  s
 }
