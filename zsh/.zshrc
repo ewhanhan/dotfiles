@@ -71,3 +71,25 @@ eval "$(fnm env --use-on-cd --shell zsh --version-file-strategy=recursive)"
 
 # PATH deduplication
 typeset -U path PATH
+
+uuu() {
+  echo "Starting system updates..."
+  (brewup)
+ 
+  # Group 1: Fast framework updates (parallel)
+  echo "Updating frameworks..."
+  zimU &
+  tpmU &
+
+  # Group 2: Network-intensive updates (parallel)
+  echo "Updating packages and editors..."
+  mas upgrade &
+  nvimU &
+  codeU &
+  npmU &
+  macU & 
+  wait
+  
+  tmuxS
+  s
+}
