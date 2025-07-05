@@ -3,6 +3,7 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(tmux source-file:*)",
+      "Bash(fd:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(rg:*)"
